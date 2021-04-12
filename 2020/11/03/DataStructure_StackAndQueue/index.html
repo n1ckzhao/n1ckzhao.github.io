@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="zhaolixing">
+    <meta name="description" content="zhaolixing の blog">
+    <meta name="author" content="nickk">
+    
+    <title>
+        
+            DataStructure_StackAndQueue |
+        
+        nickk
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="/images/logo.png">
+    
+<link rel="stylesheet" href="/css/font-awesome.min.css">
+
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"nickk.top","root":"/","language":"en"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":false,"expand_all":false,"init_open":true},"style":{"primary_color":"#0066CC","avatar":"/images/avatar.jpg","favicon":"/images/logo.png","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":true,"scale":true},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"better late than never."},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":true}}},"local_search":{"enable":true,"preload":true},"code_copy":{"enable":true,"style":"mac"},"pjax":{"enable":false},"lazyload":{"enable":false},"version":"3.4.2"};
+    KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
+  </script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            <a class="logo-title" href="/">
+                nickk
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                HOME
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                ARCHIVES
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">HOME</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">ARCHIVES</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">DataStructure_StackAndQueue</span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/avatar.jpg">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">nickk</span>
+                        
+                            <span class="author-label">Lv2</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;2020-11-03 17:36:11
+    </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fas fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/datastructure/">datastructure</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+        <span class="article-wordcount article-meta-item">
+            <i class="fas fa-file-word"></i>&nbsp;<span>3.1k Words</span>
+        </span>
+    
+    
+        <span class="article-min2read article-meta-item">
+            <i class="fas fa-clock"></i>&nbsp;<span>14 Mins</span>
+        </span>
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <h2 id="栈"><a href="#栈" class="headerlink" title="栈"></a>栈</h2><h3 id="定义-逻辑结构"><a href="#定义-逻辑结构" class="headerlink" title="定义(逻辑结构)"></a>定义(逻辑结构)</h3><p>一种操作受限的线性表,只能在栈顶插入,删除<br><strong>特性</strong>:后进先出(LIFO)<br><strong>术语</strong>:栈顶、栈底、空栈</p>
+<span id="more"></span>
+
+<h3 id="基本操作-运算"><a href="#基本操作-运算" class="headerlink" title="基本操作(运算)"></a>基本操作(运算)</h3><ul>
+<li>创建、销毁</li>
+<li>增、删(元素进栈、出栈,只能在栈顶操作)</li>
+<li>查(获得栈顶元素,但不删除)</li>
+<li>判空</li>
+</ul>
+<blockquote>
+<p>栈的常考题型:<br>给出进栈顺序,判断哪些是合法的出栈顺序</p>
+</blockquote>
+<p>n个不同元素进栈,出栈元素不同排列的个数为$\frac {1}{n+1}C^{n}_{2n}$(卡特兰数)</p>
+<h2 id="顺序栈"><a href="#顺序栈" class="headerlink" title="顺序栈"></a>顺序栈</h2><p>顺序存储,用静态数组实现,并需要记录栈顶指针</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MaxSize 10  <span class="comment">//定义栈中元素的个数</span></span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span>&#123;</span></span><br><span class="line">    ElemType data[MaxSize];  <span class="comment">//静态数组存放栈中元素</span></span><br><span class="line">    <span class="keyword">int</span> top;  <span class="comment">//栈顶指针</span></span><br><span class="line">&#125;SqStack;</span><br></pre></td></tr></table></figure>
+
+<h3 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h3><p>创增删查</p>
+<h3 id="两种实现"><a href="#两种实现" class="headerlink" title="两种实现"></a>两种实现</h3><h4 id="初始化时top-1"><a href="#初始化时top-1" class="headerlink" title="初始化时top = -1"></a>初始化时top = -1</h4><p>初始化栈👇</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">InitStack</span><span class="params">(SqStack &amp;S)</span></span>&#123;</span><br><span class="line">    S.top = <span class="number">-1</span>;  <span class="comment">//初始化栈顶指针</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>入栈👇</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">Push</span><span class="params">(SqStack &amp;S,ElemType x)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(S.top == MaxSize - <span class="number">1</span>)&#123;  <span class="comment">//栈满</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    S.top = S.top + <span class="number">1</span>;  <span class="comment">//指针先加一</span></span><br><span class="line">    S.data[S.top] = x;  <span class="comment">//新元素入栈</span></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>上述第5,6行可简写为<code>S.data[++S.top] = x</code></p>
+<p>出栈👇</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">Pop</span><span class="params">(SqStack &amp;S,ElemType &amp;x)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(S.top == <span class="number">-1</span>)&#123;  <span class="comment">//栈空</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    x = S.data[S.top];  <span class="comment">//栈顶元素先出栈</span></span><br><span class="line">    S.top = S.top - <span class="number">1</span>;  <span class="comment">//指针再减1</span></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>上述第5,6行可简写为<code>x = S.data[S.top--]</code></p>
+<p>获得栈顶元素👇</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">GetTop</span><span class="params">(SqStack S,ElemType &amp;x)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(S.top == <span class="number">-1</span>)&#123;  <span class="comment">//栈空</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    x = S.data[S.top];  <span class="comment">//x记录栈顶元素</span></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>判断栈空👇</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">StackEmpty</span><span class="params">(SqStack S)</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> S.top == <span class="number">-1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="初始化时top-0"><a href="#初始化时top-0" class="headerlink" title="初始化时top = 0"></a>初始化时top = 0</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">InitStack</span><span class="params">(SqStack &amp;S)</span></span>&#123;</span><br><span class="line">    S.top = <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>入栈👇</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">Push</span><span class="params">(SqStack &amp;S,ElemType x)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(S.top == MaxSize)&#123;  <span class="comment">//栈满</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    S.data[S.top] = x;  <span class="comment">//新元素入栈</span></span><br><span class="line">    S.top = S.top + <span class="number">1</span>;  <span class="comment">//栈顶指针加一</span></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>上述第5,6行可简写为<code>S.data[S.top++] = x</code></p>
+<p>出栈👇</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">Pop</span><span class="params">(SqStack &amp;S,ElemType &amp;x)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(S.top == <span class="number">0</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    S.top = S.top - <span class="number">1</span>;</span><br><span class="line">    x = S.data[S.top];</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>上述第5,6行可简写为<code>x = S.data[--S.top]</code></p>
+<p>获得栈顶元素👇</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">GetTop</span><span class="params">(SqStack S,ElemType &amp;x)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(S.top == <span class="number">0</span>)&#123;  <span class="comment">//栈空</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    x = S.data[S.top];  <span class="comment">//x记录栈顶元素</span></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>判断栈空👇</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">StackEmpty</span><span class="params">(SqStack S)</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> S.top == <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="共享栈"><a href="#共享栈" class="headerlink" title="共享栈"></a>共享栈</h3><p>两个栈共享同一片内存空间,两个栈从两边往中间增长</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MaxSize 10  <span class="comment">//定义栈中元素的最大个数</span></span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span>&#123;</span></span><br><span class="line">    ElemType data[MaxSize];  <span class="comment">//静态数组存放栈中元素</span></span><br><span class="line">    <span class="keyword">int</span> top0;  <span class="comment">//0号栈栈顶指针</span></span><br><span class="line">    <span class="keyword">int</span> top1;  <span class="comment">//1号栈栈顶指针</span></span><br><span class="line">&#125;ShStack;</span><br></pre></td></tr></table></figure>
+
+<p>初始化👇</p>
+<p>0号栈栈顶指针初始时top0 = -1;1号栈栈顶指针初始时top1 = MaxSize;</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">InitStack</span><span class="params">(ShStack &amp;S)</span></span>&#123;</span><br><span class="line">    S.top0 = <span class="number">-1</span>;  <span class="comment">//初始化栈顶指针</span></span><br><span class="line">    S.top1 = MaxSize;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>栈满条件👇</p>
+<p><code>top0 + 1 == top1</code></p>
+<h2 id="链栈"><a href="#链栈" class="headerlink" title="链栈"></a>链栈</h2><p>用链式存储方式实现的栈</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">LinkNode</span>&#123;</span></span><br><span class="line">    ElemType data;  <span class="comment">//数据域</span></span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">LinkNode</span> *<span class="title">next</span>;</span>  <span class="comment">//指针域</span></span><br><span class="line">&#125;*LinkStack;  <span class="comment">//栈类型定义</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="两种实现方式"><a href="#两种实现方式" class="headerlink" title="两种实现方式"></a>两种实现方式</h3><h4 id="带头结点"><a href="#带头结点" class="headerlink" title="带头结点"></a>带头结点</h4><p>初始化👇</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">InitList</span><span class="params">(LinkStack &amp;S)</span></span>&#123;</span><br><span class="line">    S = (LinkStack *)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(LinkNode));  <span class="comment">//分配一个头结点</span></span><br><span class="line">    <span class="keyword">if</span>(S == <span class="literal">NULL</span>)&#123;  <span class="comment">//内存不足,分配失败</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    S-&gt;next = <span class="literal">NULL</span>;  <span class="comment">//头结点之后暂时还没有结点</span></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>判空👇</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">StackEmpty</span><span class="params">(LinkStack S)</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> S-&gt;next == <span class="literal">NULL</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>进栈👇</p>
+<p>链栈在入栈前不需要判满,只需分配一个结点空间</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">Push</span><span class="params">(LinkStack &amp;S,ElemType e)</span></span>&#123;</span><br><span class="line">    LinkNode *p = (LinkNode *)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(LinkNode));</span><br><span class="line">    p-&gt;data = e;  <span class="comment">//将新结点数据域置为e</span></span><br><span class="line">    p-&gt;next = S-&gt;next;  <span class="comment">//插入新结点</span></span><br><span class="line">    S-&gt;next = p;  <span class="comment">//头结点指向p</span></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>出栈👇</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">Pop</span><span class="params">(LinkStack &amp;S,ElemType &amp;e)</span></span>&#123;</span><br><span class="line">    LNode *p;</span><br><span class="line">    <span class="keyword">if</span>(S-&gt;next == <span class="literal">NULL</span>)&#123;  <span class="comment">//栈空</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    e = S-&gt;next-&gt;data;  <span class="comment">//栈顶元素赋给e</span></span><br><span class="line">    p = S-&gt;next;  <span class="comment">//用p临时保存栈顶元素空间</span></span><br><span class="line">    S = p-&gt;next;  <span class="comment">//修改头结点指向</span></span><br><span class="line">    <span class="built_in">free</span>(p);  <span class="comment">//释放原栈顶元素的空间</span></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>获取栈顶元素👇</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">ElemType <span class="title">GetTop</span><span class="params">(LinkStack S)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(S-&gt;next != <span class="literal">NULL</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> S-&gt;next-&gt;data;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="不带头结点-推荐"><a href="#不带头结点-推荐" class="headerlink" title="不带头结点(推荐)"></a>不带头结点(推荐)</h4><p>初始化👇</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">InitStack</span><span class="params">(LinkStack &amp;S)</span></span>&#123;</span><br><span class="line">    S == <span class="literal">NULL</span>;  <span class="comment">//栈顶指针置空</span></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>判空👇</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">StackEmpty</span><span class="params">(LinkStack S)</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> S == <span class="literal">NULL</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>进栈👇</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">Push</span><span class="params">(LinkStack &amp;S,ElemType e)</span></span>&#123;</span><br><span class="line">    LinkNode *p = (LinkNode *)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(LinkNode));</span><br><span class="line">    p-&gt;data = e;  <span class="comment">//将新结点数据域置为e</span></span><br><span class="line">    p-&gt;next = S;  <span class="comment">//将新结点插入栈顶</span></span><br><span class="line">    S = p;  <span class="comment">//修改栈顶指针为p</span></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>出栈👇</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">Pop</span><span class="params">(LinkStack &amp;S,ElemType &amp;e)</span></span>&#123;</span><br><span class="line">    LinkNode *p = (LinkNode *)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(LinkNode));</span><br><span class="line">    <span class="keyword">if</span>(S==<span class="literal">NULL</span>)&#123;  <span class="comment">//栈空</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    e = S-&gt;data;  <span class="comment">//将栈顶元素给e</span></span><br><span class="line">    p = S;  <span class="comment">//用p临时保存栈顶元素空间</span></span><br><span class="line">    S = S-&gt;next;  <span class="comment">//修改栈顶指针</span></span><br><span class="line">    <span class="built_in">free</span>(p);</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>获取栈顶元素👇</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">ElemType <span class="title">GetTop</span><span class="params">(LinkStack S)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(S != <span class="literal">NULL</span>)&#123;  <span class="comment">//栈非空</span></span><br><span class="line">        <span class="keyword">return</span> S-&gt;data;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="队列"><a href="#队列" class="headerlink" title="队列"></a>队列</h2><h3 id="定义-逻辑结构-1"><a href="#定义-逻辑结构-1" class="headerlink" title="定义(逻辑结构)"></a>定义(逻辑结构)</h3><p>一种操作受限的线性表,只能在队尾插入,在队头删除<br><strong>特性</strong>:先进先出(FIFO)<br><strong>术语</strong>:队头,队尾,空队列,队头元素,队尾元素</p>
+<h3 id="基本操作-运算-1"><a href="#基本操作-运算-1" class="headerlink" title="基本操作(运算)"></a>基本操作(运算)</h3><ul>
+<li>创建,销毁</li>
+<li>增(入队),删(出队)</li>
+<li>查(获得队头元素,但不删除)</li>
+<li>判空</li>
+</ul>
+<h2 id="队列的顺序实现"><a href="#队列的顺序实现" class="headerlink" title="队列的顺序实现"></a>队列的顺序实现</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MaxSize 10  <span class="comment">//定义队列中元素的最大个数</span></span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span>&#123;</span></span><br><span class="line">    ElemType data[MaxSize];  <span class="comment">//用静态数组存放队列元素</span></span><br><span class="line">    <span class="keyword">int</span> front,rear;  <span class="comment">//队头指针和队尾指针</span></span><br><span class="line">&#125;SqQueue;  <span class="comment">//Sq:sequence-顺序</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="实现思想"><a href="#实现思想" class="headerlink" title="实现思想"></a>实现思想</h3><ul>
+<li><p>用静态数组存放数据元素,设置队头/队尾(<code>front</code>/<code>rear</code>)指针</p>
+</li>
+<li><p>循环队列:用模运算(取余)将存储空间在逻辑上变为”环状”</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Q.data[Q.rear] = x;</span><br><span class="line">Q.rear = (Q.rear + <span class="number">1</span>) % MaxSize;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>队列已满条件:队尾指针的再下一个位置是队头,即(Q.rear + 1) % MaxSize == Q.front</p>
+</blockquote>
+</li>
+<li><p><code>Q.rear = (Q.rear + 1) % MaxSize</code></p>
+</li>
+</ul>
+<h3 id="重要考点"><a href="#重要考点" class="headerlink" title="重要考点"></a>重要考点</h3><ol>
+<li>如何初始化,入队,出队</li>
+</ol>
+<p>初始化👇</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">InitQueue</span><span class="params">(SqQueue &amp;Q)</span></span>&#123;</span><br><span class="line">    <span class="comment">//初始时,队头、队尾指针指向0</span></span><br><span class="line">    Q.rear = Q.front = <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">testQueue</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="comment">//声明一个队列(顺序存储)</span></span><br><span class="line">    SqQueue Q;</span><br><span class="line">    InitQueue(Q);</span><br><span class="line">    <span class="comment">//...后续操作...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>入队👇</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">EnQueue</span><span class="params">(SqQueue &amp;Q, ElemType x)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>((Q.rear + <span class="number">1</span>) % MaxSize == Q.front)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;  <span class="comment">//队满则报错</span></span><br><span class="line">    &#125;</span><br><span class="line">    Q.data[Q.rear] = x;  <span class="comment">//将x插入队尾</span></span><br><span class="line">    Q.rear = (Q.rear + <span class="number">1</span>) % MaxSize;  <span class="comment">//队尾指针加1取模</span></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>出队👇</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//(删除一个队头元素,并用x返回)</span></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">DeQueue</span><span class="params">(SqQueue &amp;Q, ElemType &amp;x)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(Q.rear == Q.front)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;  <span class="comment">//队空则报错</span></span><br><span class="line">    &#125;</span><br><span class="line">    x = Q.data[Q.front];</span><br><span class="line">    Q.front = (Q.front + <span class="number">1</span>) % MaxSize;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//获得队头元素的值,用x返回</span></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">GetHead</span><span class="params">(SqQueue Q, ElemType &amp;x)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(Q.rear == Q.front)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;  <span class="comment">//队空报错</span></span><br><span class="line">    &#125;</span><br><span class="line">    x = Q.data[Q.front];</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>如何判空,判满</li>
+</ol>
+<p>(方案一)<br>判空👇</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">QueueEmpty</span><span class="params">(SqQueue Q)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(Q.rear == Q.front)&#123;  <span class="comment">//队空条件</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>判满👇</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(Q.rear + <span class="number">1</span>) % MaxSize == Q.front;</span><br></pre></td></tr></table></figure>
+
+<p>队列元素个数:<code>(rear + MaxSize - front) % MaxSize</code></p>
+<p>(方案二)</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MaxSize 10</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span>&#123;</span></span><br><span class="line">    ElemType data[MaxSize];</span><br><span class="line">    <span class="keyword">int</span> front,rear;</span><br><span class="line">    <span class="keyword">int</span> size;  <span class="comment">//队列当前长度</span></span><br><span class="line">&#125;SqQueue;</span><br></pre></td></tr></table></figure>
+
+<p>初始化时<code>rear = front = 0; size = 0;</code><br>插入成功<code>size++;</code><br>删除成功<code>size--;</code></p>
+<p>判空👉:<code>size == 0;</code><br>判满👉:<code>size == MaxSize;</code></p>
+<p>(方案三)</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MaxSize 10</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span>&#123;</span></span><br><span class="line">    ElemType data[MaxSize];</span><br><span class="line">    <span class="keyword">int</span> front,rear;</span><br><span class="line">    <span class="keyword">int</span> tag;  <span class="comment">//最近进行的是删除/插入</span></span><br><span class="line">&#125;SqQueue;</span><br></pre></td></tr></table></figure>
+
+<p>初始化时<code>rear = front = 0; tag = 0;</code><br>每次删除操作成功时,令<code>tag = 0;</code><br>每次插入操作成功时,令<code>tag = 1;</code></p>
+<blockquote>
+<p>只有删除操作,才可能导致队空<br>只有插入操作,才可能导致队满</p>
+</blockquote>
+<p>判空👉:<code>front == rear &amp;&amp; tag == 0;</code><br>判满👉:<code>front == raer &amp;&amp; tag == 1;</code></p>
+<h3 id="分析思路"><a href="#分析思路" class="headerlink" title="分析思路"></a>分析思路</h3><p>确定<code>front</code>,<code>rear</code>指针的指向</p>
+<ol>
+<li><code>rear</code>指向队尾元素后一个位置</li>
+<li><code>rear</code>指向队尾元素</li>
+</ol>
+<p>确定判空,判满的方法</p>
+<ol>
+<li>牺牲一个存储单元</li>
+<li>增加<code>size</code>变量记录队列长度</li>
+<li>增加<code>tag = 0/1</code>用于标记最近的一次操作是出队/入队</li>
+</ol>
+<h2 id="队列的链式存储实现"><a href="#队列的链式存储实现" class="headerlink" title="队列的链式存储实现"></a>队列的链式存储实现</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">LinkNode</span>&#123;</span> <span class="comment">//链式队列结点</span></span><br><span class="line">    ElemType data;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">LinkNode</span> *<span class="title">next</span>;</span></span><br><span class="line">&#125;LinkNode;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span>&#123;</span>  <span class="comment">//链式队列</span></span><br><span class="line">    LinkNode *front,*rear;  <span class="comment">//队列的队头和队尾指针</span></span><br><span class="line">&#125;LinkQueue;</span><br></pre></td></tr></table></figure>
+
+<h3 id="带头结点-1"><a href="#带头结点-1" class="headerlink" title="带头结点"></a>带头结点</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//初始化队列(带头结点)</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">InitQueue</span><span class="params">(LinkQueue &amp;Q)</span></span>&#123;</span><br><span class="line">    <span class="comment">//初始时  front、rear都指向头结点</span></span><br><span class="line">    Q.front = Q.rear = (LinkNode*)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(LinkNode));</span><br><span class="line">    Q.front-&gt;next = <span class="literal">NULL</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">testLinkQueue</span><span class="params">()</span></span>&#123;</span><br><span class="line">    LinkQueue Q;  <span class="comment">//声明一个队列</span></span><br><span class="line">    InitQueue(Q);  <span class="comment">//初始化队列</span></span><br><span class="line">    <span class="comment">//...后续操作...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>判空👇</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">IsEmpty</span><span class="params">(LinkQueue Q)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(Q.front == Q.rear)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="不带头结点"><a href="#不带头结点" class="headerlink" title="不带头结点"></a>不带头结点</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//初始化队列(不带头结点)</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">InitQueue</span><span class="params">(LinkQueue &amp;Q)</span></span>&#123;</span><br><span class="line">    <span class="comment">//初始时 front、rear都指向NULL</span></span><br><span class="line">    Q.front = <span class="literal">NULL</span>;</span><br><span class="line">    Q.rear = <span class="literal">NULL</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>判空👇</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">IsEmpty</span><span class="params">(LinkQueue Q)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(Q.front == <span class="literal">NULL</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="基本操作-1"><a href="#基本操作-1" class="headerlink" title="基本操作"></a>基本操作</h3><p>增(入队)</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//新元素入队(带头结点)</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">EnQueue</span><span class="params">(LinkQueue &amp;Q, ElemType x)</span></span>&#123;</span><br><span class="line">    LinkNode *s = (LinkNode *)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(LinkNode));</span><br><span class="line">    s-&gt;data = x;</span><br><span class="line">    s-&gt;next = <span class="literal">NULL</span>;</span><br><span class="line">    Q.rear-&gt;next = s;  <span class="comment">//新结点插入到rear之后</span></span><br><span class="line">    Q.rear = s;  <span class="comment">//修改表尾指针s</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//新元素入队(不带头结点)</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">EnQueue</span><span class="params">(LinkQueue &amp;Q, ElemType x)</span></span>&#123;</span><br><span class="line">    LinkNode *s = (LinkNode *)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(LinkNode));</span><br><span class="line">    s-&gt;data = x;</span><br><span class="line">    s-&gt;next = <span class="literal">NULL</span>;</span><br><span class="line">    <span class="keyword">if</span>(Q.front == <span class="literal">NULL</span>)&#123;  <span class="comment">//在空队列中插入第一个元素</span></span><br><span class="line">        Q.front = s;  <span class="comment">//修改队头队尾指针</span></span><br><span class="line">        Q.rear = s;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        Q.rear-&gt;next = s;  <span class="comment">//新结点插入到rear结点之后</span></span><br><span class="line">        Q.rear = s;  <span class="comment">//修改rear指针</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>删(出队)</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//队头元素出队(带头结点)</span></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">DeQueue</span><span class="params">(LinkQueue &amp;Q, ElemType &amp;x)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(Q.front == Q.rear)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;  <span class="comment">//空队</span></span><br><span class="line">    &#125;</span><br><span class="line">    LinkNode *p = Q.front-&gt;next;</span><br><span class="line">    x = p-&gt;data;  <span class="comment">//用变量x返回队头元素</span></span><br><span class="line">    Q.front-&gt;next = p-&gt;next;  <span class="comment">//修改头结点的next指针</span></span><br><span class="line">    <span class="keyword">if</span>(Q&gt;rear == p)&#123;  <span class="comment">//此次是最后一个结点出队</span></span><br><span class="line">        Q.rear = Q.front;  <span class="comment">//修改rear指针</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">free</span>(p);  <span class="comment">//释放结点空间</span></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//队头元素出队(不带头结点)</span></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">DeQueue</span><span class="params">(LinkQueue &amp;Q, ElemType &amp;x)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(Q.front == Q.rear)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;  <span class="comment">//空队</span></span><br><span class="line">    &#125;</span><br><span class="line">    LinkNode *p = Q.front;  <span class="comment">//p指向此次出队的结点</span></span><br><span class="line">    x = p-&gt;data;  <span class="comment">//用变量x返回队头元素</span></span><br><span class="line">    Q.front = p-&gt;next;  <span class="comment">//修改front指针</span></span><br><span class="line">    <span class="keyword">if</span>(Q.rear == p)&#123;  <span class="comment">//此次是最后一个结点出队</span></span><br><span class="line">        Q.front = <span class="literal">NULL</span>;  <span class="comment">//front指向NULL</span></span><br><span class="line">        Q.rear = <span class="literal">NULL</span>;  <span class="comment">//rear指向NULL</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">free</span>(p);  <span class="comment">//释放结点空间</span></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="双端队列"><a href="#双端队列" class="headerlink" title="双端队列"></a>双端队列</h2><p>概念:允许从两端插入、两端删除的队列</p>
+<p>输<strong>入</strong>受限的双端队列:允许<strong>从两端删除</strong>、<strong>从一端插入</strong>的队列<br>输<strong>出</strong>受限的双端队列:允许<strong>从两端插入</strong>、<strong>从一端删除</strong>的队列</p>
+<p>考点:对输出序列合法性的判断</p>
+<blockquote>
+<p>在栈中合法的输出序列,在双端队列中必定合法</p>
+</blockquote>
+<p>**例:**若数据元素输入序列为1,2,3,4,则哪些输出序列是合法的,哪些是非法的?</p>
+<p>$A^4_4 = 4! = 24$</p>
+<p>卡特兰数:(14中合法出栈序列)<br>$\frac{1}{n+1}C^n_{2n} = \frac{1}{4+1}C^4_8 = 14$</p>
+<p><strong>输入受限</strong>的双端队列:(斜体为非法)</p>
+<table>
+<thead>
+<tr>
+<th align="center"></th>
+<th align="center"></th>
+<th align="center"></th>
+<th align="center"></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>1,2,3,4</code></td>
+<td align="center"><code>2,1,3,4</code></td>
+<td align="center"><code>3,1,2,4</code></td>
+<td align="center"><code>4,1,2,3</code></td>
+</tr>
+<tr>
+<td align="center"><code>1,2,4,3</code></td>
+<td align="center"><code>2,1,4,3</code></td>
+<td align="center"><code>3,1,4,2</code></td>
+<td align="center"><code>4,1,3,2</code></td>
+</tr>
+<tr>
+<td align="center"><code>1,3,2,4</code></td>
+<td align="center"><code>2,3,1,4</code></td>
+<td align="center"><code>3,2,1,4</code></td>
+<td align="center"><em>4,2,1,3</em></td>
+</tr>
+<tr>
+<td align="center"><code>1,3,4,2</code></td>
+<td align="center"><code>2,3,4,1</code></td>
+<td align="center"><code>3,2,4,1</code></td>
+<td align="center"><em>4,2,3,1</em></td>
+</tr>
+<tr>
+<td align="center"><code>1,4,2,3</code></td>
+<td align="center"><code>2,4,1,3</code></td>
+<td align="center"><code>3,4,1,2</code></td>
+<td align="center"><code>4,3,1,2</code></td>
+</tr>
+<tr>
+<td align="center"><code>1,4,3,2</code></td>
+<td align="center"><code>2,4,3,1</code></td>
+<td align="center"><code>3,4,2,1</code></td>
+<td align="center"><code>4,3,2,1</code></td>
+</tr>
+</tbody></table>
+<p><strong>输出受限</strong>的双端队列:(斜体为非法)</p>
+<table>
+<thead>
+<tr>
+<th align="center"></th>
+<th align="center"></th>
+<th align="center"></th>
+<th align="center"></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>1,2,3,4</code></td>
+<td align="center"><code>2,1,3,4</code></td>
+<td align="center"><code>3,1,2,4</code></td>
+<td align="center"><code>4,1,2,3</code></td>
+</tr>
+<tr>
+<td align="center"><code>1,2,4,3</code></td>
+<td align="center"><code>2,1,4,3</code></td>
+<td align="center"><code>3,1,4,2</code></td>
+<td align="center"><em>4,1,3,2</em></td>
+</tr>
+<tr>
+<td align="center"><code>1,3,2,4</code></td>
+<td align="center"><code>2,3,1,4</code></td>
+<td align="center"><code>3,2,1,4</code></td>
+<td align="center"><code>4,2,1,3</code></td>
+</tr>
+<tr>
+<td align="center"><code>1,3,4,2</code></td>
+<td align="center"><code>2,3,4,1</code></td>
+<td align="center"><code>3,2,4,1</code></td>
+<td align="center"><em>4,2,3,1</em></td>
+</tr>
+<tr>
+<td align="center"><code>1,4,2,3</code></td>
+<td align="center"><code>2,4,1,3</code></td>
+<td align="center"><code>3,4,1,2</code></td>
+<td align="center"><code>4,3,1,2</code></td>
+</tr>
+<tr>
+<td align="center"><code>1,4,3,2</code></td>
+<td align="center"><code>2,4,3,1</code></td>
+<td align="center"><code>3,4,2,1</code></td>
+<td align="center"><code>4,3,2,1</code></td>
+</tr>
+</tbody></table>
+<h2 id="栈的应用"><a href="#栈的应用" class="headerlink" title="栈的应用"></a>栈的应用</h2><p>括号匹配问题👇</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MaxSize 10</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span>&#123;</span></span><br><span class="line">    <span class="keyword">char</span> data[MaxSize];</span><br><span class="line">    <span class="keyword">int</span> top;</span><br><span class="line">&#125;SqStack;</span><br><span class="line"></span><br><span class="line"><span class="comment">//初始化栈</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">InitStack</span><span class="params">(SqStack &amp;S)</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"><span class="comment">//判断栈空</span></span></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">StackEmpty</span><span class="params">(SqStack S)</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"><span class="comment">//新元素入栈</span></span></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">Push</span><span class="params">(SqStack &amp;S, cahr x)</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"><span class="comment">//栈顶元素出栈,用x返回</span></span></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">Pop</span><span class="params">(SqStack &amp;S, <span class="keyword">char</span> &amp;x)</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">bracketCheck</span><span class="params">(<span class="keyword">char</span> str[], <span class="keyword">int</span> length)</span></span>&#123;</span><br><span class="line">    SqStack S;</span><br><span class="line">    InitStack(S);  <span class="comment">//初始化一个栈</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>, i &lt; length; i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(str[i] == <span class="string">&#x27;(&#x27;</span> || str[i] == <span class="string">&#x27;[&#x27;</span> || str[i] == <span class="string">&#x27;&#123;&#x27;</span>)&#123;</span><br><span class="line">            Push(S,str[i]);  <span class="comment">//扫描到左括号,入栈</span></span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">if</span>(StackEmpty(S))&#123;  <span class="comment">//扫描到右括号,且当前栈空</span></span><br><span class="line">                <span class="keyword">return</span> <span class="literal">false</span>;  <span class="comment">//匹配失败</span></span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">char</span> topElem;</span><br><span class="line">            Pop(S,topElem);  <span class="comment">//栈顶元素出栈</span></span><br><span class="line">            <span class="keyword">if</span>(str[i] == <span class="string">&#x27;)&#x27;</span> &amp;&amp; topElem != <span class="string">&#x27;(&#x27;</span>)&#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(str[i] == <span class="string">&#x27;]&#x27;</span> &amp;&amp; topElem != <span class="string">&#x27;[&#x27;</span>)&#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(str[i] == <span class="string">&#x27;&#125;&#x27;</span> &amp;&amp; topElem != <span class="string">&#x27;&#123;&#x27;</span>)&#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> StackEmpty(S);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>表达式求值</p>
+<p>递归应用</p>
+
+        </div>
+
+        
+            <div class="post-copyright-info">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li>Post title：DataStructure_StackAndQueue</li>
+        <li>Post author：nickk</li>
+        <li>Create time：2020-11-03 17:36:11</li>
+        <li>
+            Post link：https://nickk.top/2020/11/03/DataStructure_StackAndQueue/
+        </li>
+        <li>
+            Copyright Notice：All articles in this blog are licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> unless stating additionally.
+        </li>
+    </ul>
+</div>
+
+            </div>
+        
+
+        
+            <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/2021/02/08/DataStructure_String/"
+                        >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">DataStructure_String</span>
+                                <span class="post-nav-item">Prev posts</span>
+                            </span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2020/10/13/Network_Chapter1/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">Network_Chapter1</span>
+                                <span class="post-nav-item">Next posts</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+            <div class="comment-container">
+                <div class="comments-container">
+    <div id="comment-anchor"></div>
+    <div class="comment-area-title">
+        <i class="fas fa-comments">&nbsp;Comments</i>
+    </div>
+    
+
+        
+            
+    <div id="gitalk-container"></div>
+    <script 
+            src="//cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.js"></script>
+    <script >
+
+        function loadGitalk() {
+            let __gitalk__pathname = decodeURI(location.pathname);
+            const __gitalk__pathnameLength = __gitalk__pathname.length;
+            const __gitalk__pathnameMaxLength = 50;
+            if (__gitalk__pathnameLength > __gitalk__pathnameMaxLength) {
+                __gitalk__pathname = __gitalk__pathname.substring(0, __gitalk__pathnameMaxLength - 3) + '...';
+            }
+
+            try {
+                Gitalk && new Gitalk({
+                    clientID: '398eaca8ffc385393164',
+                    clientSecret: '28823f0203389e28265a737792f3cd7006173e4d',
+                    repo: 'n1ckzhao.github.io',
+                    owner: 'n1ckzhao',
+                    admin: ['n1ckzhao'],
+                    id: __gitalk__pathname,
+                    language: 'en'
+                }).render('gitalk-container');
+
+            } catch (e) {
+                window.Gitalk = null;
+            }
+        }
+
+        if ('false') {
+            const loadGitalkTimeout = setTimeout(() => {
+                loadGitalk();
+                clearTimeout(loadGitalkTimeout);
+            }, 1000);
+        } else {
+            window.addEventListener('DOMContentLoaded', loadGitalk);
+        }
+    </script>
+
+
+
+        
+    
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>2018</span>&nbsp;-&nbsp;
+            
+            2021&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">nickk</a>
+        </div>
+        
+            <script async  src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                    <span id="busuanzi_container_site_uv">
+                        Visitor Count&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv">
+                        Totalview&nbsp;<span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            Powered by <a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;|&nbsp;Theme&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.2</a>
+        </div>
+        
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+            <li class="go-comment">
+                <i class="fas fa-comment"></i>
+            </li>
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="arrow-up fas fa-arrow-up"></i>
+                <span class="percent"></span>
+            </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A0%88"><span class="nav-text">栈</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89-%E9%80%BB%E8%BE%91%E7%BB%93%E6%9E%84"><span class="nav-text">定义(逻辑结构)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-%E8%BF%90%E7%AE%97"><span class="nav-text">基本操作(运算)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A1%BA%E5%BA%8F%E6%A0%88"><span class="nav-text">顺序栈</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C"><span class="nav-text">基本操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%A4%E7%A7%8D%E5%AE%9E%E7%8E%B0"><span class="nav-text">两种实现</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%9D%E5%A7%8B%E5%8C%96%E6%97%B6top-1"><span class="nav-text">初始化时top &#x3D; -1</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%9D%E5%A7%8B%E5%8C%96%E6%97%B6top-0"><span class="nav-text">初始化时top &#x3D; 0</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B1%E4%BA%AB%E6%A0%88"><span class="nav-text">共享栈</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%93%BE%E6%A0%88"><span class="nav-text">链栈</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%A4%E7%A7%8D%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%BC%8F"><span class="nav-text">两种实现方式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B8%A6%E5%A4%B4%E7%BB%93%E7%82%B9"><span class="nav-text">带头结点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%8D%E5%B8%A6%E5%A4%B4%E7%BB%93%E7%82%B9-%E6%8E%A8%E8%8D%90"><span class="nav-text">不带头结点(推荐)</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%98%9F%E5%88%97"><span class="nav-text">队列</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89-%E9%80%BB%E8%BE%91%E7%BB%93%E6%9E%84-1"><span class="nav-text">定义(逻辑结构)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-%E8%BF%90%E7%AE%97-1"><span class="nav-text">基本操作(运算)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%98%9F%E5%88%97%E7%9A%84%E9%A1%BA%E5%BA%8F%E5%AE%9E%E7%8E%B0"><span class="nav-text">队列的顺序实现</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9E%E7%8E%B0%E6%80%9D%E6%83%B3"><span class="nav-text">实现思想</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%87%8D%E8%A6%81%E8%80%83%E7%82%B9"><span class="nav-text">重要考点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%86%E6%9E%90%E6%80%9D%E8%B7%AF"><span class="nav-text">分析思路</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%98%9F%E5%88%97%E7%9A%84%E9%93%BE%E5%BC%8F%E5%AD%98%E5%82%A8%E5%AE%9E%E7%8E%B0"><span class="nav-text">队列的链式存储实现</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B8%A6%E5%A4%B4%E7%BB%93%E7%82%B9-1"><span class="nav-text">带头结点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%8D%E5%B8%A6%E5%A4%B4%E7%BB%93%E7%82%B9"><span class="nav-text">不带头结点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-1"><span class="nav-text">基本操作</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%8C%E7%AB%AF%E9%98%9F%E5%88%97"><span class="nav-text">双端队列</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A0%88%E7%9A%84%E5%BA%94%E7%94%A8"><span class="nav-text">栈的应用</span></a></li></ol>
+    </div>
+</div>
+        </aside>
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="Search..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/header-shrink.js"></script>
+
+<script src="/js/back2top.js"></script>
+
+<script src="/js/dark-light-toggle.js"></script>
+
+
+
+    
+<script src="/js/local-search.js"></script>
+
+
+
+
+    
+<script src="/js/code-copy.js"></script>
+
+
+
+
+
+<div class="post-scripts">
+    
+        
+<script src="/js/left-side-toggle.js"></script>
+
+<script src="/js/libs/anime.min.js"></script>
+
+<script src="/js/toc.js"></script>
+
+    
+</div>
+
+
+
+</body>
+</html>

@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="zhaolixing">
+    <meta name="description" content="zhaolixing の blog">
+    <meta name="author" content="nickk">
+    
+    <title>
+        
+            Hexo+Github_BlogBuilding |
+        
+        nickk
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="/images/logo.png">
+    
+<link rel="stylesheet" href="/css/font-awesome.min.css">
+
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"nickk.top","root":"/","language":"en"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":false,"expand_all":false,"init_open":true},"style":{"primary_color":"#0066CC","avatar":"/images/avatar.jpg","favicon":"/images/logo.png","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":true,"scale":true},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"better late than never."},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":true}}},"local_search":{"enable":true,"preload":true},"code_copy":{"enable":true,"style":"mac"},"pjax":{"enable":false},"lazyload":{"enable":false},"version":"3.4.2"};
+    KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
+  </script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            <a class="logo-title" href="/">
+                nickk
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                HOME
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                ARCHIVES
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">HOME</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">ARCHIVES</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">Hexo+Github_BlogBuilding</span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/avatar.jpg">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">nickk</span>
+                        
+                            <span class="author-label">Lv2</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;2020-08-20 15:31:37
+    </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fas fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/blog/">blog</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+        <span class="article-wordcount article-meta-item">
+            <i class="fas fa-file-word"></i>&nbsp;<span>1.6k Words</span>
+        </span>
+    
+    
+        <span class="article-min2read article-meta-item">
+            <i class="fas fa-clock"></i>&nbsp;<span>5 Mins</span>
+        </span>
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <h3 id="概要"><a href="#概要" class="headerlink" title="概要"></a>概要</h3><ul>
+<li>Hexo</li>
+<li>Github Pages</li>
+<li>Git</li>
+<li>Node.JS</li>
+</ul>
+<h3 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h3><ul>
+<li>安装Node.js</li>
+<li>安装Hexo并使用</li>
+<li>安装Git并了解与Hexo有关的简单命令</li>
+<li>知道如何使用Github Pages搭建免费个人博客<span id="more"></span></li>
+</ul>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
+<p>2018年大一(别算了,发稿时是大二嗷)的时候粗糙的学习了一些零零散散的云服务器知识<br>做过一个wordpress博客,跑在centOS上面,性能拉跨,遂卒.<br>后来发现GitHubPages简直大良心啊,可以托管静态页面嗷<br>具体效果参考<a class="link"   target="_blank" rel="noopener" href="https://nickk.cn/" >https://nickk.cn<i class="fas fa-external-link-alt"></i></a><br>我没学过前端,只是了解过HTML+CSS+JavaScript,大致了解前端框架<br>懂一丢丢SQL<br>写的如果有问题,还请指正嗷</p>
+</blockquote>
+<p>首先</p>
+<ul>
+<li>Hexo:高效的静态站点生成框架,基于Node.js</li>
+</ul>
+<p>通过Hexo,可以直接使用Markdown语法来撰写博客,写完后只需3条命令就能生成网页并上传至你的Github上,然后别人就可以看到你的网页了.</p>
+<ul>
+<li>无需关心网页源代码的细节</li>
+<li>用心写好博客内容就欧了</li>
+</ul>
+<blockquote>
+<p>下面分享详细步骤嗷👇</p>
+</blockquote>
+<h2 id="安装Node-js"><a href="#安装Node-js" class="headerlink" title="安装Node.js"></a>安装Node.js</h2><p>首先下载安装包:</p>
+<p><a class="link"   target="_blank" rel="noopener" href="https://github.com/n1ckzhao/ResourceRepo/blob/master/Hexo-Github%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/node-v12.18.3-x64.msi" >node-v12.18.3-x64.msi<i class="fas fa-external-link-alt"></i></a></p>
+<p>有能力的同学们可以上官网下载:<a class="link"   target="_blank" rel="noopener" href="https://nodejs.org/zh-cn/" >https://nodejs.org/zh-cn/<i class="fas fa-external-link-alt"></i></a></p>
+<p>安装选项全部默认,无脑<code>Next</code>嗷.</p>
+<p>装好之后,<code>Win</code>+<code>R</code>打开命令提示符,输入<code>node -v</code>和<code>npm -v</code>,如果出现版本号,那就说明你的第一步完成啦👍</p>
+<h2 id="安装Git"><a href="#安装Git" class="headerlink" title="安装Git"></a>安装Git</h2><p>下面来到第二步</p>
+<p>想要把本地的网页文件上传到Github上面去,我们用到了分布式版本控制工具Git</p>
+<p>官网👉<a class="link"   target="_blank" rel="noopener" href="https://git-scm.com/" >https://git-scm.com/<i class="fas fa-external-link-alt"></i></a>不多bb了,能上就上,不能上下我给的</p>
+<p><a class="link"   target="_blank" rel="noopener" href="https://github.com/n1ckzhao/ResourceRepo/blob/master/Hexo-Github%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/Git-2.28.0-64-bit.exe" >Git(v2.28.0/X64)<i class="fas fa-external-link-alt"></i></a></p>
+<p>安装一样无脑默认,只是最后一步添加路径选择<code>Use Git from the Windows Command Prompt</code>,这样就可以直接在命令提示符里面打开Git了</p>
+<p>安装完成后同第一步打开命令提示符然后输入<code>git --version</code>验一波装好没.</p>
+<p>同学,至此你的第二步就做好了👍.</p>
+<h2 id="注册GitHub账号"><a href="#注册GitHub账号" class="headerlink" title="注册GitHub账号"></a>注册GitHub账号</h2><p>作为学计算机的,谁没有Github啊.</p>
+<p>么有的话就去注册一个👉<a class="link"   target="_blank" rel="noopener" href="https://github.com/" >https://github.com<i class="fas fa-external-link-alt"></i></a></p>
+<p>新建一个项目👇</p>
+<p><img src="/asset/hexo_github/a.png" alt="newRepository"></p>
+<p>then👇</p>
+<p><img src="/asset/hexo_github/b.png" alt="createRepository"></p>
+<p>图中因为我已经创建了,所以不能创建了,把<code>n1ckzhao</code>换成你的GitHub的名字就欧了</p>
+<p>例如:(yourname).github.io</p>
+<p>点击<code>Create repository</code>就创建好了</p>
+<p>然后👇</p>
+<p><img src="/asset/hexo_github/c.png" alt="Setting"></p>
+<p>点击那个绿绿的框框里面的蓝蓝的链接,就可以看到你的网页了</p>
+<p>此处贴上<code>大壮</code>的任务点图👇</p>
+<p><img src="/asset/hexo_github/d.png" alt="GithubPages"></p>
+<p>到此,第三步Over👍!</p>
+<h2 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h2><p>在你认为合适的地方新建一个文件夹,用来存放你的博客的源文件,俺的放在U盘里了,方便到处写垃圾文章哈哈哈</p>
+<p>创建好了之后在里面右键-&gt;点击<code>Git Bash Here</code>,打开Git的控制台窗口</p>
+<p>定位到你创建的目录下(参考<code>cd \myblog\</code>),输入<code>npm i hexo-cli -g</code>安装Hexo.有几个报错的话,无视~</p>
+<p>安装完之后当然是验货啊,输入<code>hexo -v</code>验证</p>
+<p>然后初始化网站,输入<code>hexo init</code>初始化文件夹,接着输入<code>npm install</code>安装必备的组件.</p>
+<p>那些密密麻麻的代码跑完后,输入<code>hexo g</code>生成静态页面,然后输入<code>hexo s</code>打开本地服务器,然后浏览器打开<a class="link"   target="_blank" rel="noopener" href="http://localhost:4000/" >http://localhost:4000/<i class="fas fa-external-link-alt"></i></a>,就可以看到你的博客了</p>
+<p>下面放效果图👇</p>
+<p><img src="/asset/hexo_github/e.png" alt="HexoInit"></p>
+<p>看完之后<code>Ctrl</code>+<code>C</code>关闭本地服务器.</p>
+<p>至此第四步欧了👍!</p>
+<h2 id="连接Github与本地"><a href="#连接Github与本地" class="headerlink" title="连接Github与本地"></a>连接Github与本地</h2><p>来到第五层👇</p>
+<p>右键打开<code>Git Bash Here</code>,输入下列命令👇</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name &quot;ydumund&quot;</span><br><span class="line">git config --global user.email &quot;ydumund@outlook.com&quot;</span><br></pre></td></tr></table></figure>
+
+<p>双引号里面的用户名和邮箱根据你自己的注册信息填入.</p>
+<p>然后生成SSH Key👇</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;ydumund@outlook.com&quot;</span><br></pre></td></tr></table></figure>
+
+<p>然后两下回车</p>
+<p>打开你的GitHub,点击头像-&gt;<code>Setting</code>-&gt;<code>SSH and GPG Keys</code>-&gt;<code>New SSH key</code>-&gt;Title随便</p>
+<p>然后<code>Git Bash Here</code>-&gt;输入<code>cat ~/.ssh/id_rsa.pub</code>后回车会出现下面这样的👇</p>
+<p><img src="/asset/hexo_github/f.png" alt="GitBash"></p>
+<p>这一长串复制后粘贴进这里👇,再<code>Add SSH key</code></p>
+<p><img src="/asset/hexo_github/g.png" alt="SSh"></p>
+<p>上面的做完后,打开博客根目录下面的<code>_config.yml</code>文件,这是博客的配置文件</p>
+<p>修改文件最后的配置👇</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repository:</span> <span class="string">https://github.com/(YourUserName)/(YourGithubPageURL)</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure>
+
+<p>括号里的自己填入</p>
+<p>至此第五步ok👍!</p>
+<h3 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h3><p>在博客根目录下<code>Git Bash Here</code>-&gt;<code>npm i hexo-deployer-git</code>安装这个扩展.</p>
+<h2 id="写文章-发布文章"><a href="#写文章-发布文章" class="headerlink" title="写文章/发布文章"></a>写文章/发布文章</h2><p>怎么写文章呢?</p>
+<p>在博客根目录下面<code>Git Bash Here</code>-&gt;hexo new (文章标题),新建一篇文章</p>
+<p>然后用一个编辑器打开你的博客目录(这里推荐用Visual Studio Code)</p>
+<p>找到<code>Source</code>文件夹打开-&gt;<code>_posts</code></p>
+<p>就能看到你刚才创建的文章了(.md是markdown格式的文件)</p>
+<p>文章写好后-&gt;根目录中<code>Git Bash Here</code>-&gt;输入<code>hexo g &amp;&amp; hexo s</code></p>
+<p>此时你的博客本地服务器启动了,按住<code>Ctrl</code>点击那个控制台里面的<code>localhost:4000</code>就能打开看到效果了</p>
+<p>如果没什么问题的话,在控制台<code>Ctrl</code>+<code>C</code>关闭本地服务器后再输入<code>hexo d</code>上传到你的GitHub仓库就可以了.</p>
+<p>至此你已经学会了如何新建/发布文章了👍.</p>
+<h2 id="绑定域名"><a href="#绑定域名" class="headerlink" title="绑定域名"></a>绑定域名</h2><p>现在你的博客域名还是<code>YourUserName.github.io</code>,是不是感觉没有逼格?</p>
+<p>想跟俺一样有自己的域名就去某云买一个域名,因为是GithubPages的网站,所以无需备案就能使用</p>
+<p>然后就是添加解析记录了</p>
+<p><img src="/asset/hexo_github/h.png" alt="SSh"></p>
+<p>解析添加后再打开你GitHub仓库的Setting</p>
+<p><img src="/asset/hexo_github/i.png" alt="SSh"></p>
+<p>这时填入你的域名后<code>Save</code>-&gt;在仓库的根目录下面创建一个叫CNAME的文件,里面写上你的域名才算完.</p>
+<blockquote>
+<p>PS:当你点击Save后,它会自动在你的仓库根目录里面生成一个CNAME文件<br>我的建议是在你的博客的Source文件夹中建一个CNAME文件写上你的域名<br>这样你每次就不用手动添加了,很方便</p>
+</blockquote>
+<h2 id="个性化设置"><a href="#个性化设置" class="headerlink" title="个性化设置"></a>个性化设置</h2><p>去Hexo官网上面下载自己喜欢的主题即可,主题都会带有自己的文档,这里就不展开细说了</p>
+<p>so,就到这里了,出问题了可以发邮件问我<a class="link"   href="mailto:nick_zzhao@outlook.com" >nickk<i class="fas fa-external-link-alt"></i></a></p>
+
+        </div>
+
+        
+            <div class="post-copyright-info">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li>Post title：Hexo+Github_BlogBuilding</li>
+        <li>Post author：nickk</li>
+        <li>Create time：2020-08-20 15:31:37</li>
+        <li>
+            Post link：https://nickk.top/2020/08/20/Hexo+Github_BlogBuilding/
+        </li>
+        <li>
+            Copyright Notice：All articles in this blog are licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> unless stating additionally.
+        </li>
+    </ul>
+</div>
+
+            </div>
+        
+
+        
+            <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/2020/08/20/WebSiteCollections-2-0/"
+                        >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">WebSiteCollections_2.0</span>
+                                <span class="post-nav-item">Prev posts</span>
+                            </span>
+                        </a>
+                    </div>
+                
+                
+            </div>
+        
+
+        
+            <div class="comment-container">
+                <div class="comments-container">
+    <div id="comment-anchor"></div>
+    <div class="comment-area-title">
+        <i class="fas fa-comments">&nbsp;Comments</i>
+    </div>
+    
+
+        
+            
+    <div id="gitalk-container"></div>
+    <script 
+            src="//cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.js"></script>
+    <script >
+
+        function loadGitalk() {
+            let __gitalk__pathname = decodeURI(location.pathname);
+            const __gitalk__pathnameLength = __gitalk__pathname.length;
+            const __gitalk__pathnameMaxLength = 50;
+            if (__gitalk__pathnameLength > __gitalk__pathnameMaxLength) {
+                __gitalk__pathname = __gitalk__pathname.substring(0, __gitalk__pathnameMaxLength - 3) + '...';
+            }
+
+            try {
+                Gitalk && new Gitalk({
+                    clientID: '398eaca8ffc385393164',
+                    clientSecret: '28823f0203389e28265a737792f3cd7006173e4d',
+                    repo: 'n1ckzhao.github.io',
+                    owner: 'n1ckzhao',
+                    admin: ['n1ckzhao'],
+                    id: __gitalk__pathname,
+                    language: 'en'
+                }).render('gitalk-container');
+
+            } catch (e) {
+                window.Gitalk = null;
+            }
+        }
+
+        if ('false') {
+            const loadGitalkTimeout = setTimeout(() => {
+                loadGitalk();
+                clearTimeout(loadGitalkTimeout);
+            }, 1000);
+        } else {
+            window.addEventListener('DOMContentLoaded', loadGitalk);
+        }
+    </script>
+
+
+
+        
+    
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>2018</span>&nbsp;-&nbsp;
+            
+            2021&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">nickk</a>
+        </div>
+        
+            <script async  src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                    <span id="busuanzi_container_site_uv">
+                        Visitor Count&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv">
+                        Totalview&nbsp;<span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            Powered by <a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;|&nbsp;Theme&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.2</a>
+        </div>
+        
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+            <li class="go-comment">
+                <i class="fas fa-comment"></i>
+            </li>
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="arrow-up fas fa-arrow-up"></i>
+                <span class="percent"></span>
+            </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A6%82%E8%A6%81"><span class="nav-text">概要</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9B%AE%E6%A0%87"><span class="nav-text">目标</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85Node-js"><span class="nav-text">安装Node.js</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85Git"><span class="nav-text">安装Git</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B3%A8%E5%86%8CGitHub%E8%B4%A6%E5%8F%B7"><span class="nav-text">注册GitHub账号</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85Hexo"><span class="nav-text">安装Hexo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%9E%E6%8E%A5Github%E4%B8%8E%E6%9C%AC%E5%9C%B0"><span class="nav-text">连接Github与本地</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A1%A5%E5%85%85"><span class="nav-text">补充</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%86%99%E6%96%87%E7%AB%A0-%E5%8F%91%E5%B8%83%E6%96%87%E7%AB%A0"><span class="nav-text">写文章&#x2F;发布文章</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%91%E5%AE%9A%E5%9F%9F%E5%90%8D"><span class="nav-text">绑定域名</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%AA%E6%80%A7%E5%8C%96%E8%AE%BE%E7%BD%AE"><span class="nav-text">个性化设置</span></a>
+    </div>
+</div>
+        </aside>
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="Search..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/header-shrink.js"></script>
+
+<script src="/js/back2top.js"></script>
+
+<script src="/js/dark-light-toggle.js"></script>
+
+
+
+    
+<script src="/js/local-search.js"></script>
+
+
+
+
+    
+<script src="/js/code-copy.js"></script>
+
+
+
+
+
+<div class="post-scripts">
+    
+        
+<script src="/js/left-side-toggle.js"></script>
+
+<script src="/js/libs/anime.min.js"></script>
+
+<script src="/js/toc.js"></script>
+
+    
+</div>
+
+
+
+</body>
+</html>
