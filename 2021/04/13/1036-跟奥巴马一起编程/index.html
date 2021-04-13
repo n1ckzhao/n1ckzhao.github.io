@@ -9,7 +9,7 @@
     
     <title>
         
-            DataStructure_TreeAndBinaryTree |
+            1036-跟奥巴马一起编程 |
         
         nickk
     </title>
@@ -125,7 +125,7 @@
     <div class="article-content-container">
 
         <div class="article-title">
-            <span class="title-hover-animation">DataStructure_TreeAndBinaryTree</span>
+            <span class="title-hover-animation">1036-跟奥巴马一起编程</span>
         </div>
 
         
@@ -143,7 +143,7 @@
                     <div class="meta-info">
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
-        <i class="fas fa-edit"></i>&nbsp;2021-02-08 00:03:21
+        <i class="fas fa-edit"></i>&nbsp;2021-04-13 22:13:22
     </span>
     
     
@@ -152,7 +152,7 @@
             <ul>
                 
                     <li>
-                        <a href="/tags/datastructure/">datastructure</a>&nbsp;
+                        <a href="/tags/PAT/">PAT</a>&nbsp;
                     </li>
                 
             </ul>
@@ -160,6 +160,10 @@
     
 
     
+    
+        <span class="article-wordcount article-meta-item">
+            <i class="fas fa-file-word"></i>&nbsp;<span>336 Words</span>
+        </span>
     
     
         <span class="article-min2read article-meta-item">
@@ -179,7 +183,16 @@
         
 
         <div class="article-content markdown-body">
-            
+            <p>美国总统奥巴马不仅呼吁所有人都学习编程,甚至以身作则编写代码,成为美国历史上首位编写计算机代码的总统.2014年底,为庆祝“计算机科学教育周”正式启动,奥巴马编写了很简单的计算机代码:在屏幕上画一个正方形.现在你也跟他一起画吧!</p>
+<h2 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h2><p>输入在一行中给出正方形边长<code>N(3&lt;=N&lt;=20)</code>和组成正方形边的某种字符<code>C</code>,间隔一个空格.</p>
+<h2 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式:"></a>输出格式:</h2><p>输出由给定字符<code>C</code>画出的正方形.但是注意到行间距比列间距大,所以为了让结果看上去更像正方形,我们输出的行数实际上是列数的<code>50%</code>(四舍五入取整).</p>
+<h2 id="输入样例"><a href="#输入样例" class="headerlink" title="输入样例:"></a>输入样例:</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">10</span> a</span><br></pre></td></tr></table></figure>
+
+<h2 id="输出样例"><a href="#输出样例" class="headerlink" title="输出样例:"></a>输出样例:</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">aaaaaaaaaa</span><br><span class="line">a        a</span><br><span class="line">a        a</span><br><span class="line">a        a</span><br><span class="line">aaaaaaaaaa</span><br></pre></td></tr></table></figure>
+
+<h2 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h2><p>–</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> N;</span><br><span class="line">    <span class="keyword">char</span> C;</span><br><span class="line">    cin&gt;&gt;N&gt;&gt;C;</span><br><span class="line">    <span class="keyword">int</span> col = <span class="built_in">round</span>((<span class="number">0.5</span>*N));</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; col; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(i == <span class="number">0</span>||i==col<span class="number">-1</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; N; j++)</span><br><span class="line">            &#123;</span><br><span class="line">                cout&lt;&lt;C;</span><br><span class="line">            &#125;</span><br><span class="line">            cout&lt;&lt;endl;</span><br><span class="line">        &#125;<span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; N; j++)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">if</span>(j==<span class="number">0</span>||j==N<span class="number">-1</span>)</span><br><span class="line">                &#123;</span><br><span class="line">                    cout&lt;&lt;C;</span><br><span class="line">                &#125;<span class="keyword">else</span></span><br><span class="line">                &#123;</span><br><span class="line">                    cout&lt;&lt;<span class="string">&quot; &quot;</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            cout&lt;&lt;endl;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
         </div>
 
         
@@ -187,29 +200,14 @@
         
             <div class="article-nav">
                 
-                    <div class="article-prev">
-                        <a class="prev"
-                           rel="prev"
-                           href="/2021/02/08/DataStructure_Graph/"
-                        >
-                            <span class="left arrow-icon flex-center">
-                              <i class="fas fa-chevron-left"></i>
-                            </span>
-                            <span class="title flex-center">
-                                <span class="post-nav-title-item">DataStructure_Graph</span>
-                                <span class="post-nav-item">Prev posts</span>
-                            </span>
-                        </a>
-                    </div>
-                
                 
                     <div class="article-next">
                         <a class="next"
                            rel="next"
-                           href="/2021/02/08/DataStructure_String/"
+                           href="/2021/04/13/1031-%E6%9F%A5%E9%AA%8C%E8%BA%AB%E4%BB%BD%E8%AF%81/"
                         >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">DataStructure_String</span>
+                                <span class="post-nav-title-item">1031-查验身份证</span>
                                 <span class="post-nav-item">Next posts</span>
                             </span>
                             <span class="right arrow-icon flex-center">

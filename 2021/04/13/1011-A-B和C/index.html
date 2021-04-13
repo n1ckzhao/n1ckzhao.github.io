@@ -9,7 +9,7 @@
     
     <title>
         
-            DataStructure_String |
+            1011-A+B和C |
         
         nickk
     </title>
@@ -237,7 +237,7 @@ mjx-container[display="true"] + br {
     <div class="article-content-container">
 
         <div class="article-title">
-            <span class="title-hover-animation">DataStructure_String</span>
+            <span class="title-hover-animation">1011-A+B和C</span>
         </div>
 
         
@@ -255,7 +255,7 @@ mjx-container[display="true"] + br {
                     <div class="meta-info">
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
-        <i class="fas fa-edit"></i>&nbsp;2021-02-08 00:00:33
+        <i class="fas fa-edit"></i>&nbsp;2021-04-13 22:12:04
     </span>
     
     
@@ -264,7 +264,7 @@ mjx-container[display="true"] + br {
             <ul>
                 
                     <li>
-                        <a href="/tags/datastructure/">datastructure</a>&nbsp;
+                        <a href="/tags/PAT/">PAT</a>&nbsp;
                     </li>
                 
             </ul>
@@ -274,12 +274,12 @@ mjx-container[display="true"] + br {
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fas fa-file-word"></i>&nbsp;<span>966 Words</span>
+            <i class="fas fa-file-word"></i>&nbsp;<span>253 Words</span>
         </span>
     
     
         <span class="article-min2read article-meta-item">
-            <i class="fas fa-clock"></i>&nbsp;<span>4 Mins</span>
+            <i class="fas fa-clock"></i>&nbsp;<span>1 Mins</span>
         </span>
     
     
@@ -295,376 +295,16 @@ mjx-container[display="true"] + br {
         
 
         <div class="article-content markdown-body">
-            <h2 id="串的定义"><a href="#串的定义" class="headerlink" title="串的定义"></a>串的定义</h2><p>串,即字符串(String),是由零个或多个字符组成的有限序列.一般记为S = $<code>a_1a_2......a_n</code>$(n&gt;=0)</p>
-<p>其中,S是串名,单引号括起来的字符序列是串的值;<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.357ex" xmlns="http://www.w3.org/2000/svg" width="1.862ex" height="1.355ex" role="img" focusable="false" viewBox="0 -441 823 598.8"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><g data-mml-node="math"><g data-mml-node="msub"><g data-mml-node="mi"><path data-c="1D44E" d="M33 157Q33 258 109 349T280 441Q331 441 370 392Q386 422 416 422Q429 422 439 414T449 394Q449 381 412 234T374 68Q374 43 381 35T402 26Q411 27 422 35Q443 55 463 131Q469 151 473 152Q475 153 483 153H487Q506 153 506 144Q506 138 501 117T481 63T449 13Q436 0 417 -8Q409 -10 393 -10Q359 -10 336 5T306 36L300 51Q299 52 296 50Q294 48 292 46Q233 -10 172 -10Q117 -10 75 30T33 157ZM351 328Q351 334 346 350T323 385T277 405Q242 405 210 374T160 293Q131 214 119 129Q119 126 119 118T118 106Q118 61 136 44T179 26Q217 26 254 59T298 110Q300 114 325 217T351 328Z"></path></g><g data-mml-node="mi" transform="translate(529, -150) scale(0.707)"><path data-c="1D456" d="M184 600Q184 624 203 642T247 661Q265 661 277 649T290 619Q290 596 270 577T226 557Q211 557 198 567T184 600ZM21 287Q21 295 30 318T54 369T98 420T158 442Q197 442 223 419T250 357Q250 340 236 301T196 196T154 83Q149 61 149 51Q149 26 166 26Q175 26 185 29T208 43T235 78T260 137Q263 149 265 151T282 153Q302 153 302 143Q302 135 293 112T268 61T223 11T161 -11Q129 -11 102 10T74 74Q74 91 79 106T122 220Q160 321 166 341T173 380Q173 404 156 404H154Q124 404 99 371T61 287Q60 286 59 284T58 281T56 279T53 278T49 278T41 278H27Q21 284 21 287Z"></path></g></g></g></g></svg></mjx-container>可以是字母、数字或其他字符;串中字符的个数n称为串的长度.n = 0时的串称为空串(用Ø表示).</p>
-<span id="more"></span>
+            <p>给定区间[−<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: 0" xmlns="http://www.w3.org/2000/svg" width="2.844ex" height="1.887ex" role="img" focusable="false" viewBox="0 -833.9 1257.1 833.9"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><g data-mml-node="math"><g data-mml-node="msup"><g data-mml-node="mn"><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path></g><g data-mml-node="TeXAtom" transform="translate(500, 363) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mn"><path data-c="33" d="M127 463Q100 463 85 480T69 524Q69 579 117 622T233 665Q268 665 277 664Q351 652 390 611T430 522Q430 470 396 421T302 350L299 348Q299 347 308 345T337 336T375 315Q457 262 457 175Q457 96 395 37T238 -22Q158 -22 100 21T42 130Q42 158 60 175T105 193Q133 193 151 175T169 130Q169 119 166 110T159 94T148 82T136 74T126 70T118 67L114 66Q165 21 238 21Q293 21 321 74Q338 107 338 175V195Q338 290 274 322Q259 328 213 329L171 330L168 332Q166 335 166 348Q166 366 174 366Q202 366 232 371Q266 376 294 413T322 525V533Q322 590 287 612Q265 626 240 626Q208 626 181 615T143 592T132 580H135Q138 579 143 578T153 573T165 566T175 555T183 540T186 520Q186 498 172 481T127 463Z"></path><path data-c="31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z" transform="translate(500, 0)"></path></g></g></g></g></g></svg></mjx-container>,<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: 0" xmlns="http://www.w3.org/2000/svg" width="2.844ex" height="1.887ex" role="img" focusable="false" viewBox="0 -833.9 1257.1 833.9"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><g data-mml-node="math"><g data-mml-node="msup"><g data-mml-node="mn"><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path></g><g data-mml-node="TeXAtom" transform="translate(500, 363) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mn"><path data-c="33" d="M127 463Q100 463 85 480T69 524Q69 579 117 622T233 665Q268 665 277 664Q351 652 390 611T430 522Q430 470 396 421T302 350L299 348Q299 347 308 345T337 336T375 315Q457 262 457 175Q457 96 395 37T238 -22Q158 -22 100 21T42 130Q42 158 60 175T105 193Q133 193 151 175T169 130Q169 119 166 110T159 94T148 82T136 74T126 70T118 67L114 66Q165 21 238 21Q293 21 321 74Q338 107 338 175V195Q338 290 274 322Q259 328 213 329L171 330L168 332Q166 335 166 348Q166 366 174 366Q202 366 232 371Q266 376 294 413T322 525V533Q322 590 287 612Q265 626 240 626Q208 626 181 615T143 592T132 580H135Q138 579 143 578T153 573T165 566T175 555T183 540T186 520Q186 498 172 481T127 463Z"></path><path data-c="31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z" transform="translate(500, 0)"></path></g></g></g></g></g></svg></mjx-container>]内的<code>3</code>个整数<code>A</code>,<code>B</code>和<code>C</code>,请判断<code>A+B</code>是否大于<code>C</code>.</p>
+<h2 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h2><p>输入第<code>1</code>行给出正整数<code>T (≤10)</code>,是测试用例的个数.随后给出<code>T</code>组测试用例,每组占一行,顺序给出<code>A,B</code>和<code>C</code>.整数间以空格分隔.</p>
+<h2 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h2><p>对每组测试用例,在一行中输出<code>Case #X: true</code>如果 <code>A+B&gt;C</code>,否则输出<code>Case #X: false</code>,其中<code>X</code>是测试用例的编号(从<code>1</code>开始).</p>
+<h2 id="输入样例"><a href="#输入样例" class="headerlink" title="输入样例"></a>输入样例</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">4</span></span><br><span class="line"><span class="number">1</span> <span class="number">2</span> <span class="number">3</span></span><br><span class="line"><span class="number">2</span> <span class="number">3</span> <span class="number">4</span></span><br><span class="line"><span class="number">2147483647</span> <span class="number">0</span> <span class="number">2147483646</span></span><br><span class="line"><span class="number">0</span> <span class="number">-2147483648</span> <span class="number">-2147483647</span></span><br></pre></td></tr></table></figure>
 
-<p>例:<br>S = “HelloWorld!”<br>T = ‘Zhao lixing?’</p>
-<p><strong>子串</strong>:串中任意个连续的字符组成的子序列.<br>Eg:’Zhao’,’ao li’是串T的字串</p>
-<p><strong>主串</strong>:包含字串的串.<br>Eg:T是子串’Zhao’的主串</p>
-<p><strong>字符在主串中的位置</strong>:字符在串中的序号.<br>Eg:’i’在T中的位置是7(第一次出现)</p>
-<p><strong>子串在主串中的位置</strong>:子串的第一个字符在主串中的位置.<br>Eg:’ixing’在T中的位置为7</p>
-<p>空串:<code>M = ''</code><br>空格串:<code>N = ' '</code></p>
-<p>与线性表对比:</p>
-<ol>
-<li>串是一种特殊的线性表,数据元素之间呈线性关系.</li>
-<li>串的数据对象限定为字符集(如中文字符、英文字符、数字字符、标点字符等)</li>
-<li>串的基本操作,如增删改查等<strong>通常以字串为操作对象</strong></li>
-<li>通常以”子串”为增删改查的操作对象</li>
-</ol>
-<blockquote>
-<p>人类的语言通常要多个字符组成的序列才有现实意义</p>
-</blockquote>
-<h2 id="串的基本操作"><a href="#串的基本操作" class="headerlink" title="串的基本操作"></a>串的基本操作</h2><p>假设有串T=””,S=”Zhao lixing”,W=”li”</p>
-<p><code>StrAssign(&amp;T,chars)</code>:赋值操作.把串T赋值为chars.<br><code>StrCopy(&amp;T,S)</code>:复制操作.由串S复制得到串T.<br><code>StrEmpty(S)</code>:判空操作.若S为空串,则返回TRUE,否则返回FALSE.<br><code>StrLength(S)</code>:求串长.返回串S的元素个数.<br><code>ClearString(&amp;S)</code>:清空操作.将S清为空串.<br><code>DestroyString(&amp;S)</code>:销毁串.将串S销毁(回收存储空间).<br><code>Concat(&amp;T,S1,S2)</code>:串联接.用T返回由S1和S2联接而成的新串<br><code>SubString(&amp;Sub,S,pos,len)</code>:求子串.用Sub返回串S的第pos个字符起长度为len的子串.<br><strong><code>Index(S,T)</code></strong>:定位操作.若主串S中存在与串T值相同的子串,则返回它在主串S中第一次出现的<br>位置;否则函数值为0.<br><strong><code>StrCompare(S,T)</code></strong>:比较操作.若S&gt;T,则返回值&gt;0;若S=T,则返回值=0;若S&lt;T,则返回值&lt;0.</p>
-<h3 id="串的比较操作"><a href="#串的比较操作" class="headerlink" title="串的比较操作"></a>串的比较操作</h3><p><code>StrCompare(S,T)</code>:比较操作.若S&gt;T,则返回值&gt;0;若S=T,则返回值=0;若S&lt;T,则返回值&lt;0.</p>
-<p>Eg:”abandon”&lt;”aboard”</p>
-<blockquote>
-<p>从第一个字符开始往后依次对比,先出现更大字符的串就更大</p>
-</blockquote>
-<p>Eg:”abstract”&lt;”abstraction”,”academic”&gt;”abuse”</p>
-<blockquote>
-<p>长串的前缀与短串相同时,长串更大</p>
-</blockquote>
-<p>Eg:”abstract”&lt;”abstract “,”academic”=”academic”</p>
-<blockquote>
-<p>只有两个串完全相同时,才相等</p>
-</blockquote>
-<h2 id="字符集编码"><a href="#字符集编码" class="headerlink" title="字符集编码"></a>字符集编码</h2><table>
-<thead>
-<tr>
-<th>ASCII值</th>
-<th>控制字符</th>
-<th>ASCII值</th>
-<th>控制字符</th>
-<th>ASCII值</th>
-<th>控制字符</th>
-<th>ASCII值</th>
-<th>控制字符</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>0</td>
-<td>NUT</td>
-<td>32</td>
-<td>(space)</td>
-<td>64</td>
-<td>@</td>
-<td>96</td>
-<td>、</td>
-</tr>
-<tr>
-<td>1</td>
-<td>SOH</td>
-<td>33</td>
-<td>!</td>
-<td>65</td>
-<td>A</td>
-<td>97</td>
-<td>a</td>
-</tr>
-<tr>
-<td>2</td>
-<td>STX</td>
-<td>34</td>
-<td>“</td>
-<td>66</td>
-<td>B</td>
-<td>98</td>
-<td>b</td>
-</tr>
-<tr>
-<td>3</td>
-<td>ETX</td>
-<td>35</td>
-<td>#</td>
-<td>67</td>
-<td>C</td>
-<td>99</td>
-<td>c</td>
-</tr>
-<tr>
-<td>4</td>
-<td>EOT</td>
-<td>36</td>
-<td>$</td>
-<td>68</td>
-<td>D</td>
-<td>100</td>
-<td>d</td>
-</tr>
-<tr>
-<td>5</td>
-<td>ENQ</td>
-<td>37</td>
-<td>%</td>
-<td>69</td>
-<td>E</td>
-<td>101</td>
-<td>e</td>
-</tr>
-<tr>
-<td>6</td>
-<td>ACK</td>
-<td>38</td>
-<td>&amp;</td>
-<td>70</td>
-<td>F</td>
-<td>102</td>
-<td>f</td>
-</tr>
-<tr>
-<td>7</td>
-<td>BEL</td>
-<td>39</td>
-<td>,</td>
-<td>71</td>
-<td>G</td>
-<td>103</td>
-<td>g</td>
-</tr>
-<tr>
-<td>8</td>
-<td>BS</td>
-<td>40</td>
-<td>(</td>
-<td>72</td>
-<td>H</td>
-<td>104</td>
-<td>h</td>
-</tr>
-<tr>
-<td>9</td>
-<td>HT</td>
-<td>41</td>
-<td>)</td>
-<td>73</td>
-<td>I</td>
-<td>105</td>
-<td>i</td>
-</tr>
-<tr>
-<td>10</td>
-<td>LF</td>
-<td>42</td>
-<td>*</td>
-<td>74</td>
-<td>J</td>
-<td>106</td>
-<td>j</td>
-</tr>
-<tr>
-<td>11</td>
-<td>VT</td>
-<td>43</td>
-<td>+</td>
-<td>75</td>
-<td>K</td>
-<td>107</td>
-<td>k</td>
-</tr>
-<tr>
-<td>12</td>
-<td>FF</td>
-<td>44</td>
-<td>,</td>
-<td>76</td>
-<td>L</td>
-<td>108</td>
-<td>l</td>
-</tr>
-<tr>
-<td>13</td>
-<td>CR</td>
-<td>45</td>
-<td>-</td>
-<td>77</td>
-<td>M</td>
-<td>109</td>
-<td>m</td>
-</tr>
-<tr>
-<td>14</td>
-<td>SO</td>
-<td>46</td>
-<td>.</td>
-<td>78</td>
-<td>N</td>
-<td>110</td>
-<td>n</td>
-</tr>
-<tr>
-<td>15</td>
-<td>SI</td>
-<td>47</td>
-<td>/</td>
-<td>79</td>
-<td>O</td>
-<td>111</td>
-<td>o</td>
-</tr>
-<tr>
-<td>16</td>
-<td>DLE</td>
-<td>48</td>
-<td>0</td>
-<td>80</td>
-<td>P</td>
-<td>112</td>
-<td>p</td>
-</tr>
-<tr>
-<td>17</td>
-<td>DCI</td>
-<td>49</td>
-<td>1</td>
-<td>81</td>
-<td>Q</td>
-<td>113</td>
-<td>q</td>
-</tr>
-<tr>
-<td>18</td>
-<td>DC2</td>
-<td>50</td>
-<td>2</td>
-<td>82</td>
-<td>R</td>
-<td>114</td>
-<td>r</td>
-</tr>
-<tr>
-<td>19</td>
-<td>DC3</td>
-<td>51</td>
-<td>3</td>
-<td>83</td>
-<td>S</td>
-<td>115</td>
-<td>s</td>
-</tr>
-<tr>
-<td>20</td>
-<td>DC4</td>
-<td>52</td>
-<td>4</td>
-<td>84</td>
-<td>T</td>
-<td>116</td>
-<td>t</td>
-</tr>
-<tr>
-<td>21</td>
-<td>NAK</td>
-<td>53</td>
-<td>5</td>
-<td>85</td>
-<td>U</td>
-<td>117</td>
-<td>u</td>
-</tr>
-<tr>
-<td>22</td>
-<td>SYN</td>
-<td>54</td>
-<td>6</td>
-<td>86</td>
-<td>V</td>
-<td>118</td>
-<td>v</td>
-</tr>
-<tr>
-<td>23</td>
-<td>TB</td>
-<td>55</td>
-<td>7</td>
-<td>87</td>
-<td>W</td>
-<td>119</td>
-<td>w</td>
-</tr>
-<tr>
-<td>24</td>
-<td>CAN</td>
-<td>56</td>
-<td>8</td>
-<td>88</td>
-<td>X</td>
-<td>120</td>
-<td>x</td>
-</tr>
-<tr>
-<td>25</td>
-<td>EM</td>
-<td>57</td>
-<td>9</td>
-<td>89</td>
-<td>Y</td>
-<td>121</td>
-<td>y</td>
-</tr>
-<tr>
-<td>26</td>
-<td>SUB</td>
-<td>58</td>
-<td>:</td>
-<td>90</td>
-<td>Z</td>
-<td>122</td>
-<td>z</td>
-</tr>
-<tr>
-<td>27</td>
-<td>ESC</td>
-<td>59</td>
-<td>;</td>
-<td>91</td>
-<td>[</td>
-<td>123</td>
-<td>{</td>
-</tr>
-<tr>
-<td>28</td>
-<td>FS</td>
-<td>60</td>
-<td>&lt;</td>
-<td>92</td>
-<td>/</td>
-<td>124</td>
-<td>|</td>
-</tr>
-<tr>
-<td>29</td>
-<td>GS</td>
-<td>61</td>
-<td>=</td>
-<td>93</td>
-<td>]</td>
-<td>125</td>
-<td>}</td>
-</tr>
-<tr>
-<td>30</td>
-<td>RS</td>
-<td>62</td>
-<td>&gt;</td>
-<td>94</td>
-<td>^</td>
-<td>126</td>
-<td>`</td>
-</tr>
-<tr>
-<td>31</td>
-<td>US</td>
-<td>63</td>
-<td>?</td>
-<td>95</td>
-<td>_</td>
-<td>127</td>
-<td>DEL</td>
-</tr>
-</tbody></table>
-<h2 id="串的存储结构"><a href="#串的存储结构" class="headerlink" title="串的存储结构"></a>串的存储结构</h2><h3 id="顺序结构"><a href="#顺序结构" class="headerlink" title="顺序结构"></a>顺序结构</h3><h3 id="链式结构"><a href="#链式结构" class="headerlink" title="链式结构"></a>链式结构</h3><h3 id="基于顺序存储实现基本操作"><a href="#基于顺序存储实现基本操作" class="headerlink" title="基于顺序存储实现基本操作"></a>基于顺序存储实现基本操作</h3>
+<h2 id="输出样例"><a href="#输出样例" class="headerlink" title="输出样例"></a>输出样例</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Case #<span class="number">1</span>: <span class="literal">false</span></span><br><span class="line">Case #<span class="number">2</span>: <span class="literal">true</span></span><br><span class="line">Case #<span class="number">3</span>: <span class="literal">true</span></span><br><span class="line">Case #<span class="number">4</span>: <span class="literal">false</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h2><p>–</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    <span class="keyword">int</span> TestNum = <span class="number">0</span>;</span><br><span class="line">    cin&gt;&gt;TestNum;</span><br><span class="line">    <span class="keyword">if</span>(TestNum&lt;<span class="number">1</span>||TestNum&gt;<span class="number">10</span>)</span><br><span class="line">    {</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">long</span> <span class="keyword">long</span> A,B,C;</span><br><span class="line">    <span class="keyword">bool</span> cases[<span class="number">10</span>];</span><br><span class="line">    string bools[<span class="number">2</span>] = {<span class="string">"false"</span>,<span class="string">"true"</span>};</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; TestNum; i++)</span><br><span class="line">    {</span><br><span class="line">        cin&gt;&gt;A&gt;&gt;B&gt;&gt;C;</span><br><span class="line">        <span class="keyword">if</span>(A+B&gt;C)</span><br><span class="line">        {</span><br><span class="line">            cases[i] = <span class="literal">true</span>;</span><br><span class="line">        }<span class="keyword">else</span></span><br><span class="line">        {</span><br><span class="line">            cases[i] = <span class="literal">false</span>;</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; TestNum; i++)</span><br><span class="line">    {</span><br><span class="line">        cout&lt;&lt;<span class="string">"Case #"</span>&lt;&lt;i+<span class="number">1</span>&lt;&lt;<span class="string">": "</span>&lt;&lt;bools[cases[i]]&lt;&lt;endl;</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+
         </div>
 
         
@@ -675,13 +315,13 @@ mjx-container[display="true"] + br {
                     <div class="article-prev">
                         <a class="prev"
                            rel="prev"
-                           href="/2021/02/08/DataStructure_TreeAndBinaryTree/"
+                           href="/2021/04/13/1016-%E9%83%A8%E5%88%86A-B/"
                         >
                             <span class="left arrow-icon flex-center">
                               <i class="fas fa-chevron-left"></i>
                             </span>
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">DataStructure_TreeAndBinaryTree</span>
+                                <span class="post-nav-title-item">1016-部分A+B</span>
                                 <span class="post-nav-item">Prev posts</span>
                             </span>
                         </a>
@@ -691,10 +331,10 @@ mjx-container[display="true"] + br {
                     <div class="article-next">
                         <a class="next"
                            rel="next"
-                           href="/2020/11/03/DataStructure_StackAndQueue/"
+                           href="/2021/04/13/1006-%E6%8D%A2%E4%B8%AA%E6%A0%BC%E5%BC%8F%E8%BE%93%E5%87%BA%E6%95%B4%E6%95%B0/"
                         >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">DataStructure_StackAndQueue</span>
+                                <span class="post-nav-title-item">1006-换个格式输出整数</span>
                                 <span class="post-nav-item">Next posts</span>
                             </span>
                             <span class="right arrow-icon flex-center">

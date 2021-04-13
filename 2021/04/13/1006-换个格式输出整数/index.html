@@ -9,7 +9,7 @@
     
     <title>
         
-            DataStructure_TreeAndBinaryTree |
+            1006-换个格式输出整数 |
         
         nickk
     </title>
@@ -125,7 +125,7 @@
     <div class="article-content-container">
 
         <div class="article-title">
-            <span class="title-hover-animation">DataStructure_TreeAndBinaryTree</span>
+            <span class="title-hover-animation">1006-换个格式输出整数</span>
         </div>
 
         
@@ -143,7 +143,7 @@
                     <div class="meta-info">
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
-        <i class="fas fa-edit"></i>&nbsp;2021-02-08 00:03:21
+        <i class="fas fa-edit"></i>&nbsp;2021-04-13 22:11:39
     </span>
     
     
@@ -152,7 +152,7 @@
             <ul>
                 
                     <li>
-                        <a href="/tags/datastructure/">datastructure</a>&nbsp;
+                        <a href="/tags/PAT/">PAT</a>&nbsp;
                     </li>
                 
             </ul>
@@ -160,6 +160,10 @@
     
 
     
+    
+        <span class="article-wordcount article-meta-item">
+            <i class="fas fa-file-word"></i>&nbsp;<span>247 Words</span>
+        </span>
     
     
         <span class="article-min2read article-meta-item">
@@ -179,7 +183,20 @@
         
 
         <div class="article-content markdown-body">
-            
+            <p>让我们用字母<code>B</code>来表示“百”,字母<code>S</code>表示“十”,用<code>12...n</code>来表示不为零的个位数字<code>n(&lt;10)</code>,换个格式来输出任一个不超过<code>3</code>位的正整数.例如<code>234</code>应该被输出为<code>BBSSS1234</code>,因为它有<code>2</code>个“百”,<code>3</code>个“十”,以及个位的<code>4</code>.</p>
+<h2 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h2><p>每个测试输入包含<code>1</code>个测试用例,给出正整数<code>n(&lt;1000)</code>.</p>
+<h2 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h2><p>每个测试用例的输出占一行,用规定的格式输出<code>n</code>.</p>
+<h2 id="输入样例1"><a href="#输入样例1" class="headerlink" title="输入样例1"></a>输入样例1</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">234</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="输出样例1"><a href="#输出样例1" class="headerlink" title="输出样例1"></a>输出样例1</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">BBSSS1234</span><br></pre></td></tr></table></figure>
+
+<h2 id="输入样例2"><a href="#输入样例2" class="headerlink" title="输入样例2"></a>输入样例2</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">23</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="输出样例2"><a href="#输出样例2" class="headerlink" title="输出样例2"></a>输出样例2</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SS123</span><br></pre></td></tr></table></figure>
+
+<h2 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h2><p>–</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> num;</span><br><span class="line">    cin&gt;&gt;num;</span><br><span class="line">    <span class="keyword">if</span>(num&lt;<span class="number">1</span>||num&gt;<span class="number">999</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> b=<span class="number">0</span>,s=<span class="number">0</span>,n=<span class="number">0</span>;</span><br><span class="line">    b=num/<span class="number">100</span>;</span><br><span class="line">    s=num/<span class="number">10</span>%<span class="number">10</span>;</span><br><span class="line">    n=num%<span class="number">10</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;b;i++)&#123;cout&lt;&lt;<span class="string">&quot;B&quot;</span>;&#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;s;i++)&#123;cout&lt;&lt;<span class="string">&quot;S&quot;</span>;&#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;cout&lt;&lt;i+<span class="number">1</span>;&#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
         </div>
 
         
@@ -190,13 +207,13 @@
                     <div class="article-prev">
                         <a class="prev"
                            rel="prev"
-                           href="/2021/02/08/DataStructure_Graph/"
+                           href="/2021/04/13/1011-A-B%E5%92%8CC/"
                         >
                             <span class="left arrow-icon flex-center">
                               <i class="fas fa-chevron-left"></i>
                             </span>
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">DataStructure_Graph</span>
+                                <span class="post-nav-title-item">1011-A+B和C</span>
                                 <span class="post-nav-item">Prev posts</span>
                             </span>
                         </a>
@@ -206,10 +223,10 @@
                     <div class="article-next">
                         <a class="next"
                            rel="next"
-                           href="/2021/02/08/DataStructure_String/"
+                           href="/2021/04/13/1002-%E5%86%99%E5%87%BA%E8%BF%99%E4%B8%AA%E6%95%B0/"
                         >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">DataStructure_String</span>
+                                <span class="post-nav-title-item">1002-写出这个数</span>
                                 <span class="post-nav-item">Next posts</span>
                             </span>
                             <span class="right arrow-icon flex-center">
