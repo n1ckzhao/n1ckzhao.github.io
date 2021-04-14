@@ -9,7 +9,7 @@
     
     <title>
         
-            Network_Chapter1 |
+            1041-考试座位号 |
         
         nickk
     </title>
@@ -125,7 +125,7 @@
     <div class="article-content-container">
 
         <div class="article-title">
-            <span class="title-hover-animation">Network_Chapter1</span>
+            <span class="title-hover-animation">1041-考试座位号</span>
         </div>
 
         
@@ -143,7 +143,7 @@
                     <div class="meta-info">
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
-        <i class="fas fa-edit"></i>&nbsp;2020-10-13 08:53:13
+        <i class="fas fa-edit"></i>&nbsp;2021-04-14 11:14:46
     </span>
     
     
@@ -152,7 +152,7 @@
             <ul>
                 
                     <li>
-                        <a href="/tags/network/">network</a>&nbsp;
+                        <a href="/tags/PAT/">PAT</a>&nbsp;
                     </li>
                 
             </ul>
@@ -162,12 +162,12 @@
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fas fa-file-word"></i>&nbsp;<span>124 Words</span>
+            <i class="fas fa-file-word"></i>&nbsp;<span>496 Words</span>
         </span>
     
     
         <span class="article-min2read article-meta-item">
-            <i class="fas fa-clock"></i>&nbsp;<span>1 Mins</span>
+            <i class="fas fa-clock"></i>&nbsp;<span>2 Mins</span>
         </span>
     
     
@@ -183,36 +183,16 @@
         
 
         <div class="article-content markdown-body">
-            <h2 id="概念-amp-功能"><a href="#概念-amp-功能" class="headerlink" title="概念&amp;功能"></a>概念&amp;功能</h2><h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><ul>
-<li>计算机系统</li>
-<li>通信设备与线路</li>
-<li>软件</li>
-<li>资源共享和信息传递<span id="more"></span></li>
-</ul>
-<h3 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h3><ul>
-<li>数据通信</li>
-<li>资源共享</li>
-<li>分布式处理<ul>
-<li>可靠性</li>
-<li>负载均衡</li>
-</ul>
-</li>
-</ul>
-<h3 id="因特网发展阶段"><a href="#因特网发展阶段" class="headerlink" title="因特网发展阶段"></a>因特网发展阶段</h3><ul>
-<li>ARPAnet-&gt;internet-&gt;Internet</li>
-<li>三级结构的因特网</li>
-<li>多层次ISP结构的因特网</li>
-</ul>
-<h2 id="标准化工作及组织"><a href="#标准化工作及组织" class="headerlink" title="标准化工作及组织"></a>标准化工作及组织</h2><h3 id="标准"><a href="#标准" class="headerlink" title="标准"></a>标准</h3><ul>
-<li>法定标准</li>
-<li>事实标准</li>
-</ul>
-<h3 id="RFC及其发展为因特网标准的四个阶段"><a href="#RFC及其发展为因特网标准的四个阶段" class="headerlink" title="RFC及其发展为因特网标准的四个阶段"></a>RFC及其发展为因特网标准的四个阶段</h3><h3 id="相关组织"><a href="#相关组织" class="headerlink" title="相关组织"></a>相关组织</h3><ul>
-<li><strong>ISO</strong></li>
-<li>ITU</li>
-<li>IEEE</li>
-<li>IETF</li>
-</ul>
+            <p>每个<code>PAT</code>考生在参加考试时都会被分配两个座位号,一个是试机座位,一个是考试座位.正常情况下,考生在入场时先得到试机座位号码,入座进入试机状态后,系统会显示该考生的考试座位号码,考试时考生需要换到考试座位就座.但有些考生迟到了,试机已经结束,他们只能拿着领到的试机座位号码求助于你,从后台查出他们的考试座位号码.</p>
+<h2 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h2><p>输入第一行给出一个正整数<code>N(≤1000)</code>,随后<code>N</code>行,每行给出一个考生的信息:准考证号 试机座位号 考试座位号.其中准考证号由<code>16</code>位数字组成,座位从<code>1</code>到<code>N</code>编号.输入保证每个人的准考证号都不同,并且任何时候都不会把两个人分配到同一个座位上.</p>
+<p>考生信息之后,给出一个正整数<code>M(≤N)</code>,随后一行中给出<code>M</code>个待查询的试机座位号码,以空格分隔.</p>
+<h2 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h2><p>对应每个需要查询的试机座位号码,在一行中输出对应考生的准考证号和考试座位号码,中间用<code>1</code>个空格分隔.</p>
+<h2 id="输入样例"><a href="#输入样例" class="headerlink" title="输入样例"></a>输入样例</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">4</span></span><br><span class="line"><span class="number">3310120150912233</span> <span class="number">2</span> <span class="number">4</span></span><br><span class="line"><span class="number">3310120150912119</span> <span class="number">4</span> <span class="number">1</span></span><br><span class="line"><span class="number">3310120150912126</span> <span class="number">1</span> <span class="number">3</span></span><br><span class="line"><span class="number">3310120150912002</span> <span class="number">3</span> <span class="number">2</span></span><br><span class="line"><span class="number">2</span></span><br><span class="line"><span class="number">3</span> <span class="number">4</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="输出样例"><a href="#输出样例" class="headerlink" title="输出样例"></a>输出样例</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">3310120150912002</span> <span class="number">2</span></span><br><span class="line"><span class="number">3310120150912119</span> <span class="number">1</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h2><p>–</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">stu</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    string id;</span><br><span class="line">    <span class="keyword">int</span> pcid,penid;</span><br><span class="line">&#125;stu;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> N,M;</span><br><span class="line">    cin&gt;&gt;N;</span><br><span class="line">    stu *stus = <span class="keyword">new</span> stu[N];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; N;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        cin&gt;&gt;stus[i].id&gt;&gt;stus[i].pcid&gt;&gt;stus[i].penid;</span><br><span class="line">    &#125;</span><br><span class="line">    cin&gt;&gt;M;</span><br><span class="line">    <span class="keyword">int</span> *no = <span class="keyword">new</span> <span class="keyword">int</span>[M];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; M;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        cin&gt;&gt;no[i];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; M;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>;j &lt; N;j++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(no[i]==stus[j].pcid)</span><br><span class="line">            &#123;</span><br><span class="line">                cout&lt;&lt;stus[j].id&lt;&lt;<span class="string">&quot; &quot;</span>&lt;&lt;stus[j].penid&lt;&lt;endl;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
         </div>
 
@@ -221,29 +201,14 @@
         
             <div class="article-nav">
                 
-                    <div class="article-prev">
-                        <a class="prev"
-                           rel="prev"
-                           href="/2020/11/03/DataStructure_StackAndQueue/"
-                        >
-                            <span class="left arrow-icon flex-center">
-                              <i class="fas fa-chevron-left"></i>
-                            </span>
-                            <span class="title flex-center">
-                                <span class="post-nav-title-item">DataStructure_StackAndQueue</span>
-                                <span class="post-nav-item">Prev posts</span>
-                            </span>
-                        </a>
-                    </div>
-                
                 
                     <div class="article-next">
                         <a class="next"
                            rel="next"
-                           href="/2020/10/12/Composition_Chapter1/"
+                           href="/2021/04/13/1036-%E8%B7%9F%E5%A5%A5%E5%B7%B4%E9%A9%AC%E4%B8%80%E8%B5%B7%E7%BC%96%E7%A8%8B/"
                         >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">Composition_Chapter1</span>
+                                <span class="post-nav-title-item">1036-跟奥巴马一起编程</span>
                                 <span class="post-nav-item">Next posts</span>
                             </span>
                             <span class="right arrow-icon flex-center">
