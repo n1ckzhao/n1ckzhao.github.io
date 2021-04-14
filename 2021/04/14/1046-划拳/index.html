@@ -9,7 +9,7 @@
     
     <title>
         
-            1041-考试座位号 |
+            1046-划拳 |
         
         nick&#39;s blog
     </title>
@@ -151,7 +151,7 @@
     <div class="article-content-container">
 
         <div class="article-title">
-            <span class="title-hover-animation">1041-考试座位号</span>
+            <span class="title-hover-animation">1046-划拳</span>
         </div>
 
         
@@ -169,7 +169,7 @@
                     <div class="meta-info">
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
-        <i class="fas fa-edit"></i>&nbsp;2021-04-14 11:14:46
+        <i class="fas fa-edit"></i>&nbsp;2021-04-14 20:59:43
     </span>
     
     
@@ -188,12 +188,12 @@
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fas fa-file-word"></i>&nbsp;<span>496 Words</span>
+            <i class="fas fa-file-word"></i>&nbsp;<span>365 Words</span>
         </span>
     
     
         <span class="article-min2read article-meta-item">
-            <i class="fas fa-clock"></i>&nbsp;<span>2 Mins</span>
+            <i class="fas fa-clock"></i>&nbsp;<span>1 Mins</span>
         </span>
     
     
@@ -209,16 +209,19 @@
         
 
         <div class="article-content markdown-body">
-            <p>每个<code>PAT</code>考生在参加考试时都会被分配两个座位号,一个是试机座位,一个是考试座位.正常情况下,考生在入场时先得到试机座位号码,入座进入试机状态后,系统会显示该考生的考试座位号码,考试时考生需要换到考试座位就座.但有些考生迟到了,试机已经结束,他们只能拿着领到的试机座位号码求助于你,从后台查出他们的考试座位号码.</p>
-<h2 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h2><p>输入第一行给出一个正整数<code>N(≤1000)</code>,随后<code>N</code>行,每行给出一个考生的信息:准考证号 试机座位号 考试座位号.其中准考证号由<code>16</code>位数字组成,座位从<code>1</code>到<code>N</code>编号.输入保证每个人的准考证号都不同,并且任何时候都不会把两个人分配到同一个座位上.</p>
-<p>考生信息之后,给出一个正整数<code>M(≤N)</code>,随后一行中给出<code>M</code>个待查询的试机座位号码,以空格分隔.</p>
-<h2 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h2><p>对应每个需要查询的试机座位号码,在一行中输出对应考生的准考证号和考试座位号码,中间用<code>1</code>个空格分隔.</p>
-<h2 id="输入样例"><a href="#输入样例" class="headerlink" title="输入样例"></a>输入样例</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">4</span></span><br><span class="line"><span class="number">3310120150912233</span> <span class="number">2</span> <span class="number">4</span></span><br><span class="line"><span class="number">3310120150912119</span> <span class="number">4</span> <span class="number">1</span></span><br><span class="line"><span class="number">3310120150912126</span> <span class="number">1</span> <span class="number">3</span></span><br><span class="line"><span class="number">3310120150912002</span> <span class="number">3</span> <span class="number">2</span></span><br><span class="line"><span class="number">2</span></span><br><span class="line"><span class="number">3</span> <span class="number">4</span></span><br></pre></td></tr></table></figure>
+            <p>划拳是古老中国酒文化的一个有趣的组成部分.酒桌上两人划拳的方法为:每人口中喊出一个数字,同时用手比划出一个数字.如果谁比划出的数字正好等于两人喊出的数字之和,谁就赢了,输家罚一杯酒.两人同赢或两人同输则继续下一轮,直到唯一的赢家出现.</p>
+<p>下面给出甲,乙两人的划拳记录,请你统计他们最后分别喝了多少杯酒.</p>
+<h2 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h2><p>输入第一行先给出一个正整数<code>N(≤100)</code>,随后<code>N</code>行,每行给出一轮划拳的记录,格式为:</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">甲喊 甲划 乙喊 乙划</span><br></pre></td></tr></table></figure>
 
-<h2 id="输出样例"><a href="#输出样例" class="headerlink" title="输出样例"></a>输出样例</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">3310120150912002</span> <span class="number">2</span></span><br><span class="line"><span class="number">3310120150912119</span> <span class="number">1</span></span><br></pre></td></tr></table></figure>
+<p>其中喊是喊出的数字,划是划出的数字,均为不超过<code>100</code>的正整数(两只手一起划).</p>
+<h2 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h2><p>在一行中先后输出甲,乙两人喝酒的杯数,其间以一个空格分隔.</p>
+<h2 id="输入样例"><a href="#输入样例" class="headerlink" title="输入样例"></a>输入样例</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">5</span></span><br><span class="line"><span class="number">8</span> <span class="number">10</span> <span class="number">9</span> <span class="number">12</span></span><br><span class="line"><span class="number">5</span> <span class="number">10</span> <span class="number">5</span> <span class="number">10</span></span><br><span class="line"><span class="number">3</span> <span class="number">8</span> <span class="number">5</span> <span class="number">12</span></span><br><span class="line"><span class="number">12</span> <span class="number">18</span> <span class="number">1</span> <span class="number">13</span></span><br><span class="line"><span class="number">4</span> <span class="number">16</span> <span class="number">12</span> <span class="number">15</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="输出样例"><a href="#输出样例" class="headerlink" title="输出样例"></a>输出样例</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span> <span class="number">2</span></span><br></pre></td></tr></table></figure>
 
 <h2 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h2><p>–</p>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">stu</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    string id;</span><br><span class="line">    <span class="keyword">int</span> pcid,penid;</span><br><span class="line">&#125;stu;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> N,M;</span><br><span class="line">    cin&gt;&gt;N;</span><br><span class="line">    stu *stus = <span class="keyword">new</span> stu[N];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; N;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        cin&gt;&gt;stus[i].id&gt;&gt;stus[i].pcid&gt;&gt;stus[i].penid;</span><br><span class="line">    &#125;</span><br><span class="line">    cin&gt;&gt;M;</span><br><span class="line">    <span class="keyword">int</span> *no = <span class="keyword">new</span> <span class="keyword">int</span>[M];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; M;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        cin&gt;&gt;no[i];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; M;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>;j &lt; N;j++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(no[i]==stus[j].pcid)</span><br><span class="line">            &#123;</span><br><span class="line">                cout&lt;&lt;stus[j].id&lt;&lt;<span class="string">&quot; &quot;</span>&lt;&lt;stus[j].penid&lt;&lt;endl;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> N;</span><br><span class="line">    cin&gt;&gt;N;</span><br><span class="line">    <span class="keyword">int</span> aDrink = <span class="number">0</span>,bDrink = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; N;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> asay,bsay,ado,bdo;</span><br><span class="line">        cin&gt;&gt;asay&gt;&gt;ado&gt;&gt;bsay&gt;&gt;bdo;</span><br><span class="line">        <span class="keyword">if</span>(ado == asay + bsay &amp;&amp; ado != bdo)</span><br><span class="line">        &#123;</span><br><span class="line">            bDrink++;</span><br><span class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span>(bdo == asay + bsay &amp;&amp; bdo != ado)</span><br><span class="line">        &#123;</span><br><span class="line">            aDrink++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    cout&lt;&lt;aDrink&lt;&lt;<span class="string">&quot; &quot;</span>&lt;&lt;bDrink&lt;&lt;endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
         </div>
 
@@ -227,29 +230,14 @@
         
             <div class="article-nav">
                 
-                    <div class="article-prev">
-                        <a class="prev"
-                           rel="prev"
-                           href="/2021/04/14/1046-%E5%88%92%E6%8B%B3/"
-                        >
-                            <span class="left arrow-icon flex-center">
-                              <i class="fas fa-chevron-left"></i>
-                            </span>
-                            <span class="title flex-center">
-                                <span class="post-nav-title-item">1046-划拳</span>
-                                <span class="post-nav-item">Prev posts</span>
-                            </span>
-                        </a>
-                    </div>
-                
                 
                     <div class="article-next">
                         <a class="next"
                            rel="next"
-                           href="/2021/04/13/1036-%E8%B7%9F%E5%A5%A5%E5%B7%B4%E9%A9%AC%E4%B8%80%E8%B5%B7%E7%BC%96%E7%A8%8B/"
+                           href="/2021/04/14/1041-%E8%80%83%E8%AF%95%E5%BA%A7%E4%BD%8D%E5%8F%B7/"
                         >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">1036-跟奥巴马一起编程</span>
+                                <span class="post-nav-title-item">1041-考试座位号</span>
                                 <span class="post-nav-item">Next posts</span>
                             </span>
                             <span class="right arrow-icon flex-center">
