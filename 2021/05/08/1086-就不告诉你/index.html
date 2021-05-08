@@ -9,7 +9,7 @@
     
     <title>
         
-            1071-小赌怡情 |
+            1086-就不告诉你 |
         
         nick&#39;s blog
     </title>
@@ -151,7 +151,7 @@
     <div class="article-content-container">
 
         <div class="article-title">
-            <span class="title-hover-animation">1071-小赌怡情</span>
+            <span class="title-hover-animation">1086-就不告诉你</span>
         </div>
 
         
@@ -169,7 +169,7 @@
                     <div class="meta-info">
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
-        <i class="fas fa-edit"></i>&nbsp;2021-05-01 17:17:32
+        <i class="fas fa-edit"></i>&nbsp;2021-05-08 23:11:43
     </span>
     
     
@@ -188,12 +188,12 @@
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fas fa-file-word"></i>&nbsp;<span>631 Words</span>
+            <i class="fas fa-file-word"></i>&nbsp;<span>200 Words</span>
         </span>
     
     
         <span class="article-min2read article-meta-item">
-            <i class="fas fa-clock"></i>&nbsp;<span>2 Mins</span>
+            <i class="fas fa-clock"></i>&nbsp;<span>1 Mins</span>
         </span>
     
     
@@ -209,29 +209,15 @@
         
 
         <div class="article-content markdown-body">
-            <p>常言道“小赌怡情”.这是一个很简单的小游戏:首先由计算机给出第一个整数;然后玩家下注赌第二个整数将会比第一个数大还是小;玩家下注<code>t</code>个筹码后,计算机给出第二个数.若玩家猜对了,则系统奖励玩家<code>t</code>个筹码;否则扣除玩家<code>t</code>个筹码.</p>
-<p>注意:玩家下注的筹码数不能超过自己帐户上拥有的筹码数.当玩家输光了全部筹码后,游戏就结束.</p>
-<h2 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h2><p>输入在第一行给出<code>2</code>个正整数<code>T</code>和<code>K(≤ 100)</code>,分别是系统在初始状态下赠送给玩家的筹码数、以及需要处理的游戏次数.随后<code>K</code>行,每行对应一次游戏,顺序给出<code>4</code>个数字:</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">n1 b t n2</span><br></pre></td></tr></table></figure>
+            <p>做作业的时候,邻座的小盆友问你:“五乘以七等于多少?”你应该不失礼貌地围笑着告诉他:“五十三.”本题就要求你,对任何一对给定的正整数,倒着输出它们的乘积.</p>
+<h2 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h2><p>输入在第一行给出两个不超过<code>1000</code>的正整数<code>A</code>和<code>B</code>,其间以空格分隔.</p>
+<h2 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h2><p>在一行中倒着输出<code>A</code>和<code>B</code>的乘积.</p>
+<h2 id="输入样例"><a href="#输入样例" class="headerlink" title="输入样例"></a>输入样例</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">5</span> <span class="number">7</span></span><br></pre></td></tr></table></figure>
 
-<p>其中<code>n1</code>和<code>n2</code>是计算机先后给出的两个[0, 9]内的整数,保证两个数字不相等.<code>b</code>为<code>0</code>表示玩家赌小,为<code>1</code>表示玩家赌大.<code>t</code>表示玩家下注的筹码数,保证在整型范围内.</p>
-<h2 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h2><p>对每一次游戏,根据下列情况对应输出(其中<code>t</code>是玩家下注量,<code>x</code>是玩家当前持有的筹码量):</p>
-<ul>
-<li>玩家赢,输出<code>Win t! Total = x.</code>;</li>
-<li>玩家输,输出<code>Lose t. Total = x.</code>;</li>
-<li>玩家下注超过持有的筹码量,输出<code>Not enough tokens. Total = x.</code>;</li>
-<li>玩家输光后,输出<code>Game Over.</code>并结束程序.</li>
-</ul>
-<h2 id="输入样例1"><a href="#输入样例1" class="headerlink" title="输入样例1"></a>输入样例1</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">100</span> <span class="number">4</span></span><br><span class="line"><span class="number">8</span> <span class="number">0</span> <span class="number">100</span> <span class="number">2</span></span><br><span class="line"><span class="number">3</span> <span class="number">1</span> <span class="number">50</span> <span class="number">1</span></span><br><span class="line"><span class="number">5</span> <span class="number">1</span> <span class="number">200</span> <span class="number">6</span></span><br><span class="line"><span class="number">7</span> <span class="number">0</span> <span class="number">200</span> <span class="number">8</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="输出样例1"><a href="#输出样例1" class="headerlink" title="输出样例1"></a>输出样例1</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Win <span class="number">100</span>!  Total = <span class="number">200.</span></span><br><span class="line">Lose <span class="number">50.</span>  Total = <span class="number">150.</span></span><br><span class="line">Not enough tokens.  Total = <span class="number">150.</span></span><br><span class="line">Not enough tokens.  Total = <span class="number">150.</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="输入样例2"><a href="#输入样例2" class="headerlink" title="输入样例2"></a>输入样例2</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">100</span> <span class="number">4</span></span><br><span class="line"><span class="number">8</span> <span class="number">0</span> <span class="number">100</span> <span class="number">2</span></span><br><span class="line"><span class="number">3</span> <span class="number">1</span> <span class="number">200</span> <span class="number">1</span></span><br><span class="line"><span class="number">5</span> <span class="number">1</span> <span class="number">200</span> <span class="number">6</span></span><br><span class="line"><span class="number">7</span> <span class="number">0</span> <span class="number">200</span> <span class="number">8</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="输出样例2"><a href="#输出样例2" class="headerlink" title="输出样例2"></a>输出样例2</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Win <span class="number">100</span>!  Total = <span class="number">200.</span></span><br><span class="line">Lose <span class="number">200.</span>  Total = <span class="number">0.</span></span><br><span class="line">Game Over.</span><br></pre></td></tr></table></figure>
+<h2 id="输出样例"><a href="#输出样例" class="headerlink" title="输出样例"></a>输出样例</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">53</span></span><br></pre></td></tr></table></figure>
 
 <h2 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h2><p>–</p>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">game</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">int</span> n1,b,t,n2;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> T,K;</span><br><span class="line">    cin&gt;&gt;T&gt;&gt;K;</span><br><span class="line">    vector&lt;game&gt; games;</span><br><span class="line">    games.<span class="built_in">reserve</span>(K);</span><br><span class="line">    game game;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; K;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        cin&gt;&gt;game.n1&gt;&gt;game.b&gt;&gt;game.t&gt;&gt;game.n2;</span><br><span class="line">        games.<span class="built_in">push_back</span>(game);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; K;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(T==<span class="number">0</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;Game Over.\n&quot;</span>);</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span>(games[i].t&gt;T)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;Not enough tokens.  Total = %d.\n&quot;</span>,T);</span><br><span class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span>((games[i].b==<span class="number">0</span>&amp;&amp;games[i].n2&lt;games[i].n1)||(games[i].b==<span class="number">1</span>&amp;&amp;games[i].n2&gt;games[i].n1))</span><br><span class="line">        &#123;</span><br><span class="line">            T+=games[i].t;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;Win %d!  Total = %d.\n&quot;</span>,games[i].t,T);</span><br><span class="line">        &#125;<span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">            T-=games[i].t;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;Lose %d.  Total = %d.\n&quot;</span>,games[i].t,T);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> A,B;</span><br><span class="line">    cin&gt;&gt;A&gt;&gt;B;</span><br><span class="line">    <span class="keyword">int</span> sum = A*B;</span><br><span class="line">    string s = <span class="built_in">to_string</span>(sum);</span><br><span class="line">    string s2;</span><br><span class="line">    <span class="keyword">int</span> j = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = s.<span class="built_in">length</span>()<span class="number">-1</span>;i&gt;=<span class="number">0</span>;i--)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(j&lt;s.<span class="built_in">length</span>())</span><br><span class="line">        &#123;</span><br><span class="line">            s2[j] = (s[i]);</span><br><span class="line">            j++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> res = <span class="built_in">stod</span>(s2);</span><br><span class="line">    cout&lt;&lt;res;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
         </div>
 
         
@@ -239,29 +225,14 @@
         
             <div class="article-nav">
                 
-                    <div class="article-prev">
-                        <a class="prev"
-                           rel="prev"
-                           href="/2021/05/08/1091-N-%E8%87%AA%E5%AE%88%E6%95%B0/"
-                        >
-                            <span class="left arrow-icon flex-center">
-                              <i class="fas fa-chevron-left"></i>
-                            </span>
-                            <span class="title flex-center">
-                                <span class="post-nav-title-item">1091-N-自守数</span>
-                                <span class="post-nav-item">Prev posts</span>
-                            </span>
-                        </a>
-                    </div>
-                
                 
                     <div class="article-next">
                         <a class="next"
                            rel="next"
-                           href="/2021/05/01/1061-%E5%88%A4%E6%96%AD%E9%A2%98/"
+                           href="/2021/05/08/1081-%E6%A3%80%E6%9F%A5%E5%AF%86%E7%A0%81/"
                         >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">1061-判断题</span>
+                                <span class="post-nav-title-item">1081-检查密码</span>
                                 <span class="post-nav-item">Next posts</span>
                             </span>
                             <span class="right arrow-icon flex-center">
